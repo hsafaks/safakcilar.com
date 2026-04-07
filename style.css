@@ -1,80 +1,81 @@
-/* Genel Ayarlar */
 :root {
-    --navy: #1e3a8a; /* MM Resmi Mavi */
-    --gold: #b45309;
-    --text: #334155;
-    --light-bg: #f8fafc;
+    --mm-blue: #162a78; /* Görseldeki lacivert tonu */
+    --text-color: #1e293b;
+    --gray-bg: #f8fafc;
 }
 
-body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text); margin: 0; scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; margin: 0; color: var(--text-color); scroll-behavior: smooth; }
 .container { width: 90%; max-width: 1200px; margin: auto; }
 
-/* Navigasyon & MM Logo */
-nav { background: white; padding: 15px 0; border-bottom: 2px solid var(--light-bg); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-.nav-flex { display: flex; justify-content: space-between; align-items: center; }
-
-.logo-area { display: flex; align-items: center; gap: 12px; }
-.mm-logo {
-    background: var(--navy);
-    width: 45px;
-    height: 45px;
-    border-radius: 6px;
+/* RESMİ MM LOGO TASARIMI (Görseldeki Gibi) */
+.official-mm-logo {
+    background: var(--mm-blue);
+    width: 55px;
+    height: 55px;
+    border: 2px solid white;
+    outline: 2px solid var(--mm-blue);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: 800;
-    font-size: 1.2rem;
-    letter-spacing: -2px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-.m-left { transform: translateY(-3px); }
-.m-right { transform: translateY(3px); }
+.big-m {
+    color: white;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 55px;
+    margin-left: 4px;
+}
+.small-m {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
 
-.logo-text { display: flex; flex-direction: column; }
-.brand-name { font-weight: 700; font-size: 1.2rem; color: var(--navy); line-height: 1; }
-.brand-title { font-size: 0.7rem; color: #64748b; font-weight: 600; text-transform: uppercase; margin-top: 3px; }
+.nav-flex { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+.logo-area { display: flex; align-items: center; gap: 15px; }
+.brand-name { font-weight: 800; font-size: 1.4rem; color: var(--mm-blue); display: block; line-height: 1; }
+.brand-title { font-size: 0.75rem; color: #64748b; font-weight: 600; text-transform: uppercase; }
 
+nav { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000; }
 .nav-links { display: flex; list-style: none; gap: 20px; }
-.nav-links a { text-decoration: none; color: var(--navy); font-weight: 600; font-size: 0.9rem; }
+.nav-links a { text-decoration: none; color: var(--mm-blue); font-weight: 700; font-size: 0.9rem; }
 
-/* Hero */
-.hero { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); color: white; padding: 100px 0; text-align: center; }
-.hero h1 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; }
-.hero-actions { margin-top: 30px; display: flex; gap: 15px; justify-content: center; }
+.hero { background: var(--mm-blue); color: white; padding: 100px 0; text-align: center; }
+.hero h1 { font-size: 2.8rem; margin-bottom: 20px; }
+.hero-actions { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
 
-.btn { padding: 12px 30px; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s; }
-.btn-primary { background: white; color: var(--navy); }
+.btn { padding: 12px 30px; border-radius: 4px; font-weight: 700; text-decoration: none; display: inline-block; }
+.btn-primary { background: white; color: var(--mm-blue); }
 .btn-success { background: #22c55e; color: white; }
-.btn-outline { border: 2px solid var(--navy); color: var(--navy); margin-top: 20px; }
+.btn-outline { border: 2px solid var(--mm-blue); color: var(--mm-blue); font-weight: 700; text-decoration: none; padding: 10px 20px; display: inline-block; margin-top: 20px; }
 
-/* Section Styles */
-.section-title { text-align: center; margin-bottom: 50px; padding-top: 50px; }
-.section-title h2 { color: var(--navy); font-size: 2rem; }
+.section-title { text-align: center; margin-bottom: 50px; padding-top: 60px; }
+.section-title h2 { color: var(--mm-blue); font-size: 2.2rem; }
 
-/* Mali Grid */
-.mali-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding-bottom: 50px; }
-.mali-card { background: #fff; padding: 25px; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-.mali-card h3 { color: var(--navy); border-bottom: 2px solid var(--light-bg); padding-bottom: 10px; margin-bottom: 15px; }
+.mali-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; padding-bottom: 60px; }
+.mali-card { background: white; padding: 30px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.mali-card h3 { color: var(--mm-blue); border-bottom: 2px solid var(--gray-bg); padding-bottom: 10px; margin-bottom: 20px; }
 .mali-card ul { list-style: none; padding: 0; }
-.mali-card li { margin-bottom: 10px; font-size: 0.95rem; border-bottom: 1px dashed #f1f5f9; padding-bottom: 5px; }
+.mali-card li { padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; }
+.mali-card i { color: #22c55e; }
 
-/* Resmi Gazete */
-.gray-bg { background: #f1f5f9; padding-bottom: 80px; }
-.rg-list { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
-.rg-item { padding: 18px 25px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; transition: 0.2s; }
-.rg-item:hover { background: #f8fafc; transform: scale(1.005); }
-.rg-item a { color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.95rem; flex: 1; }
-.rg-item i { margin-right: 15px; color: var(--navy); }
+.gray-bg { background: var(--gray-bg); padding-bottom: 80px; }
+.rg-list { background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden; }
+.rg-item { padding: 15px 25px; border-bottom: 1px solid #f1f5f9; transition: 0.2s; }
+.rg-item:hover { background: #fdfdfd; }
+.rg-item a { color: #334155; text-decoration: none; font-weight: 500; font-size: 1rem; }
 
-/* Hakkımda & İletişim */
-.about-card { text-align: center; max-width: 800px; margin: auto; padding: 50px 0; }
-.badge { background: var(--gold); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
-.dark-section { background: var(--navy); color: white; padding: 60px 0; }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 30px 0; }
+.dark-section { background: var(--mm-blue); color: white; padding: 70px 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.badge { background: #d97706; color: white; padding: 4px 12px; border-radius: 4px; font-weight: 700; }
+.about-card { text-align: center; padding: 60px 0; }
+footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 40px 0; }
 
 @media (max-width: 768px) {
     .nav-links { display: none; }
-    .hero h1 { font-size: 1.8rem; }
     .contact-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
 }
