@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 2. 2026 Rakamlarını Yükle (MuhasebeTR / Resmi Tebliğ Senkronlu)
+    // 2. 2026 Rakamlarını Yükle (Muhasebe / Resmi Tebliğ Senkronlu)
     loadMali2026Data();
 
     // 3. Resmi Gazete Akışı
