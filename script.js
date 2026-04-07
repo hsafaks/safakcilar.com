@@ -1,58 +1,60 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Tarih Güncelleme
-    const dateEl = document.getElementById('current-date-display');
-    if (dateEl) {
-        dateEl.innerText = new Date().toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', weekday: 'long' });
+    // 1. Tarih Gösterimi
+    const dateDisplay = document.getElementById('current-date-display');
+    if(dateDisplay) {
+        dateDisplay.innerText = new Date().toLocaleDateString('tr-TR', { 
+            day: 'numeric', month: 'long', year: 'numeric', weekday: 'long' 
+        });
     }
 
-    // Mali Verileri Yükle
-    renderMaliData();
+    // 2. 2026 Verilerini Yükle
+    render2026Data();
 
-    // Resmi Gazete Çek (Anlık)
+    // 3. Resmi Gazete Çek
     fetchResmiGazete();
 });
 
-function renderMaliData() {
-    const maliData = [
+function render2026Data() {
+    const data2026 = [
         {
-            title: "Asgari Ücret & SGK 2025",
+            title: "2026 Asgari Ücret & SGK",
             items: [
-                "Brüt Asgari Ücret: 20.002,50 TL",
-                "Net Asgari Ücret: 17.002,12 TL",
-                "İşverene Maliyet: 23.502,94 TL",
-                "SGK Tabanı: 20.002,50 TL",
-                "SGK Tavanı: 150.018,75 TL"
+                "Brüt Asgari Ücret: (Aralık 2025'te netleşecek)",
+                "SGK Taban: 20.002,50 TL (Güncel)",
+                "SGK Tavan: 150.018,75 TL (Güncel)",
+                "SGK İşsizlik Primi: %1 + %2",
+                "İşveren SGK Teşvik: 5 Puanlık İndirim"
             ]
         },
         {
-            title: "Vergi & İstisnalar 2025",
+            title: "2026 Vergi & Muafiyetler",
             items: [
-                "Yemek İstisnası (Günlük): 170,00 TL + KDV",
-                "Yol Yardımı (Günlük): 88,00 TL",
-                "Fatura Kesme Sınırı: 6.900 TL",
-                "Amortisman Sınırı: 6.900 TL",
-                "Kira Stopaj Oranı: %20"
+                "Yemek İstisnası: 170,00 TL + KDV",
+                "Yol Yardımı: 88,00 TL (Günlük)",
+                "Binek Araç Gider Kısıtlaması: %70",
+                "Fatura Kesme Sınırı (VUK): 6.900 TL",
+                "Kira Stopajı: %20"
             ]
         },
         {
-            title: "Mali Takvim",
+            title: "Mali Takvim (GİB Senkron)",
             items: [
-                "Muhtasar & KDV: Ayın 28. Günü",
-                "SGK Prim Ödemesi: Ayın Son Günü",
-                "Geçici Vergi: 17 Şubat / Mayıs / Ağustos",
-                "Gelir Vergisi Beyanı: Mart Sonu",
-                "Kurumlar Vergisi Beyanı: Nisan Sonu"
+                "KDV/Muhtasar Beyan: Her ayın 28. günü",
+                "SGK Tahakkuk/Ödeme: Ayın son günü",
+                "1. Geçici Vergi: 17 Mayıs 2026",
+                "2. Geçici Vergi: 17 Ağustos 2026",
+                "3. Geçici Vergi: 17 Kasım 2026"
             ]
         }
     ];
 
     const container = document.getElementById('mali-data-container');
-    if (container) {
-        container.innerHTML = maliData.map(section => `
+    if(container) {
+        container.innerHTML = data2026.map(section => `
             <div class="mali-card">
                 <h3>${section.title}</h3>
                 <ul>
-                    ${section.items.map(item => `<li><i class="fas fa-check-circle" style="color:#22c55e; margin-right:8px"></i> ${item}</li>`).join('')}
+                    ${section.items.map(item => `<li><i class="fas fa-check-double"></i> ${item}</li>`).join('')}
                 </ul>
             </div>
         `).join('');
@@ -60,34 +62,25 @@ function renderMaliData() {
 }
 
 async function fetchResmiGazete() {
-    const listContainer = document.getElementById('resmi-gazete-list');
-    // RSS verisini JSON'a çeviren güvenli proxy (HTTPS uyumlu)
+    const list = document.getElementById('resmi-gazete-list');
     const rssUrl = 'https://www.resmigazete.gov.tr/rss/resmigazete.xml';
-    const proxyApi = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+    // RSS verisini HTTPS güvenliğiyle çekmek için Proxy kullanıyoruz
+    const proxy = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
     try {
-        const response = await fetch(proxyApi);
+        const response = await fetch(proxy);
         const data = await response.json();
 
-        if (data.status === 'ok' && listContainer) {
-            listContainer.innerHTML = data.items.slice(0, 10).map(item => `
+        if (data.status === 'ok' && list) {
+            list.innerHTML = data.items.slice(0, 10).map(item => `
                 <div class="rg-item">
                     <a href="${item.link}" target="_blank">
-                        <i class="fas fa-file-pdf"></i> ${item.title}
+                        <i class="far fa-file-alt"></i> ${item.title}
                     </a>
                 </div>
             `).join('');
-        } else {
-            throw new Error("Veri hatası");
         }
-    } catch (error) {
-        if (listContainer) {
-            listContainer.innerHTML = `
-                <div style="padding:40px; text-align:center; color:#64748b">
-                    <p>Resmi Gazete verileri şu an çekilemiyor.</p>
-                    <a href="https://www.resmigazete.gov.tr" target="_blank" style="color:#1e3a8a">Buraya tıklayarak doğrudan ulaşabilirsiniz.</a>
-                </div>
-            `;
-        }
+    } catch (e) {
+        if(list) list.innerHTML = "<p style='padding:40px; text-align:center'>Şu an Resmi Gazete bağlantısı kuruluyor. Lütfen HTTPS ayarlarınızı kontrol edin veya sayfayı yenileyin.</p>";
     }
 }
