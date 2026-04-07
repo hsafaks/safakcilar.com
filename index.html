@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mali Müşavir [Hasan ŞAFAKÇILAR]  </title>
+    <title>SMMM Hasan Şafakçılar | Mali Müşavirlik & Danışmanlık</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Navigasyon -->
     <nav>
-        <div class="container">
-            <div class="logo">SMMM [Hasan ŞAFAKÇILAR]</div>
+        <div class="container nav-flex">
+            <div class="logo">
+                <i class="fas fa-balance-scale"></i> 
+                <span>HASAN ŞAFAKÇILAR</span>
+                <small>SMMM</small>
+            </div>
             <ul>
-                <li><a href="#pratik-bilgiler">Pratik Bilgiler</a></li>
+                <li><a href="#mali-veriler">Mali Veriler</a></li>
                 <li><a href="#resmi-gazete">Resmi Gazete</a></li>
                 <li><a href="#hakkimda">Hakkımda</a></li>
                 <li><a href="#iletisim">İletişim</a></li>
@@ -23,86 +26,69 @@
         </div>
     </nav>
 
-    <!-- Hero Bölümü -->
     <header class="hero">
         <div class="container">
-            <h1>Mali Süreçlerinizde Güvenilir Çözüm Ortağınız</h1>
-            <p>Güncel mevzuat, vergi planlaması ve finansal danışmanlık.</p>
-            <a href="#iletisim" class="btn">Danışmanlık Alın</a>
+            <h1>Stratejik Mali Yönetim & Mevzuat Danışmanlığı</h1>
+            <p>2025 - 2026 Dönemi Güncel Vergi ve Sosyal Güvenlik Mevzuatı ile İşletmenizi Güvenceye Alın.</p>
+            <div class="hero-btns">
+                <a href="#mali-veriler" class="btn">Güncel Verileri İncele</a>
+                <a href="https://wa.me/905053109128" target="_blank" class="btn btn-alt"><i class="fab fa-whatsapp"></i> WhatsApp Danışma</a>
+            </div>
         </div>
     </header>
 
-    <!-- Pratik Bilgiler Paneli -->
-    <section id="pratik-bilgiler" class="container">
-        <h2 class="section-title">2024 - 2025 Pratik Bilgiler</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Asgari Ücret</h3>
-                <p>Brüt: 20.002,50 TL</p>
-                <p>Net: 17.002,12 TL</p>
-            </div>
-            <div class="card">
-                <h3>Vergi Takvimi</h3>
-                <p>KDV2: Her ayın 25. günü</p>
-                <p>Muhtasar/KDV: Her ayın 28. günü</p>
-            </div>
-            <div class="card">
-                <h3>SGK Tavan/Taban</h3>
-                <p>Taban: 20.002,50 TL</p>
-                <p>Tavan: 150.018,75 TL</p>
-            </div>
-            <div class="card">
-                <h3>Gecikme Zammı</h3>
-                <p>Aylık: %4,5</p>
-                <small>02.05.2024'ten itibaren</small>
-            </div>
+    <!-- Dinamik Mali Veriler Paneli -->
+    <section id="mali-veriler" class="container">
+        <div class="section-header">
+            <h2>2025 - 2026 Pratik Mali Bilgiler</h2>
+            <p id="current-date"></p>
+        </div>
+        <div class="mali-grid" id="mali-bilgi-container">
+            <!-- JS ile doldurulacak -->
+            <div class="loader">Veriler güncelleniyor...</div>
         </div>
     </section>
 
-    <!-- Resmi Gazete Bölümü -->
+    <!-- Canlı Resmi Gazete Akışı -->
     <section id="resmi-gazete" class="dark-bg">
         <div class="container">
-            <h2 class="section-title">Günün Resmi Gazete Başlıkları</h2>
-            <div id="rg-container" class="rg-feed">
-                <!-- Veriler JS ile buraya gelecek -->
-                <p>Veriler yükleniyor...</p>
+            <div class="section-header">
+                <h2><i class="fas fa-newspaper"></i> Günlük Resmi Gazete Başlıkları</h2>
+                <p>Cumhurbaşkanlığı Kararları, Yönetmelikler ve Tebliğler (Anlık)</p>
             </div>
-            <div class="rg-footer">
-                <a href="https://www.resmigazete.gov.tr" target="_blank" class="btn-outline">Tümünü Gör</a>
+            <div id="rg-feed" class="rg-card-container">
+                <!-- JS ile Resmi Gazete başlıkları buraya akacak -->
             </div>
         </div>
     </section>
 
-    <!-- Hakkımda -->
     <section id="hakkimda" class="container">
-        <div class="about-flex">
-            <div class="about-text">
-                <h2>Hakkımda</h2>
-                <p>[ ]</p>
-                <p>Müşterilerimize şeffaf, hızlı ve mevzuata tam uyumlu hizmet sunmayı ilke ediniyoruz.</p>
-            </div>
+        <div class="about-card">
+            <div class="badge">SMMM</div>
+            <h2>Hasan Şafakçılar</h2>
+            <p>Mali süreçlerin dijitalleştiği yeni nesil ekonomide, mükelleflerimize vergi planlaması, denetim ve danışmanlık alanlarında profesyonel çözümler sunuyoruz. Mevzuat takibini sizin yerinize yapıyor, finansal risklerinizi minimize ediyoruz.</p>
         </div>
     </section>
 
-    <!-- İletişim -->
-    <section id="iletisim" class="container contact">
-        <h2 class="section-title">İletişim</h2>
-        <div class="grid">
-            <div class="contact-info">
-                <p><i class="fas fa-phone"></i> 0 (505) 310 91 28</p>
-                <p><i class="fas fa-envelope"></i> hasan@safakcilar.com</p>
+    <section id="iletisim" class="container">
+        <div class="contact-wrapper">
+            <div class="contact-box">
+                <h3>İletişim Bilgileri</h3>
                 <p><i class="fas fa-map-marker-alt"></i> Konya, Türkiye</p>
+                <p><i class="fas fa-phone-alt"></i> 0 (505) 310 91 28</p>
+                <p><i class="fas fa-envelope"></i> hsafak@zoho.com</p>
             </div>
-            <div class="social">
-                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <div class="contact-box">
+                <h3>Çalışma Saatleri</h3>
+                <p>Pazartesi - Cuma: 09:00 - 18:00</p>
+                <p>Cumartesi: 10:00 - 14:00</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 SMMM [Hasan ŞAFAKÇILAR]. Tüm hakları saklıdır.</p>
-    </footer>
+        <p>&copy; 2025 Hasan Şafakçılar - Serbest Muhasebeci Mali Müşavir</p>
+    </div>
 
     <script src="script.js"></script>
 </body>
