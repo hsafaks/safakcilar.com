@@ -1,85 +1,88 @@
 :root {
     --mm-blue: #162a78;
-    --navy-dark: #0f172a;
-    --gray-bg: #f8fafc;
+    --mm-gold: #c5a059;
+    --bg-gray: #f1f5f9;
 }
 
-body { font-family: 'Inter', sans-serif; margin: 0; color: #1e293b; scroll-behavior: smooth; }
-.container { width: 90%; max-width: 1200px; margin: auto; }
+body { font-family: 'Inter', sans-serif; margin: 0; color: #334155; scroll-behavior: smooth; background-color: #fff; }
+.container { width: 92%; max-width: 1200px; margin: auto; }
 
-/* RESMİ MM LOGO - GÖRSELLE BİREBİR */
-.mm-logo-frame {
-    width: 60px;
-    height: 60px;
-    background: var(--mm-blue);
-    padding: 3px;
-    border: 1.5px solid var(--mm-blue);
+/* LOGO - GÖRSELDEKİ BİREBİR TASARIM */
+.mm-outer-box {
+    width: 62px;
+    height: 62px;
+    background-color: var(--mm-blue);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 3px;
+    box-sizing: border-box;
 }
-.mm-logo-inner {
+
+.mm-inner-border {
     width: 100%;
     height: 100%;
-    border: 1.5px solid white;
+    border: 1.8px solid white; /* Beyaz kontür */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .m-big {
     color: white;
-    font-size: 42px;
+    font-size: 44px;
     font-weight: 800;
     line-height: 1;
-    margin-right: 4px;
+    margin-right: 5px;
 }
+
 .m-small {
     color: white;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
     position: absolute;
-    top: 2px;
+    top: 3px;
     right: 4px;
 }
 
-.nav-flex { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
-.logo-area { display: flex; align-items: center; gap: 15px; }
-.brand-name { font-weight: 800; font-size: 1.5rem; color: var(--mm-blue); letter-spacing: -0.5px; line-height: 1; }
-.brand-title { font-size: 0.8rem; color: #64748b; font-weight: 600; text-transform: uppercase; display: block; margin-top: 4px; }
+/* Navigasyon */
+nav { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000; padding: 10px 0; }
+.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+.logo-area { display: flex; align-items: center; gap: 18px; }
+.brand-name { font-weight: 800; font-size: 1.6rem; color: var(--mm-blue); line-height: 1; letter-spacing: -0.5px; }
+.brand-title { font-size: 0.85rem; color: #64748b; font-weight: 600; text-transform: uppercase; margin-top: 5px; display: block; }
+.nav-links { display: flex; list-style: none; gap: 25px; }
+.nav-links a { text-decoration: none; color: var(--mm-blue); font-weight: 700; font-size: 0.95rem; }
 
-nav { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000; }
-.nav-links { display: flex; list-style: none; gap: 20px; }
-.nav-links a { text-decoration: none; color: var(--mm-blue); font-weight: 700; font-size: 0.9rem; }
-
+/* Hero */
 .hero { background: var(--mm-blue); color: white; padding: 80px 0; text-align: center; }
-.hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
-.btn { padding: 12px 30px; border-radius: 4px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; }
+.hero h1 { font-size: 2.8rem; margin-bottom: 20px; }
+.btn { padding: 14px 32px; border-radius: 5px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; }
 .btn-primary { background: white; color: var(--mm-blue); }
-.btn-success { background: #22c55e; color: white; margin-left: 10px; }
-.btn-outline { border: 2px solid var(--mm-blue); color: var(--mm-blue); padding: 10px 25px; text-decoration: none; margin-top: 25px; display: inline-block; font-weight: 700; }
+.btn-whatsapp { background: #25d366; color: white; margin-left: 10px; }
+.btn-outline { border: 2px solid var(--mm-blue); color: var(--mm-blue); margin-top: 25px; }
 
-.section-title { text-align: center; margin-bottom: 50px; padding-top: 60px; }
-.mali-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; padding-bottom: 60px; }
-.mali-card { background: white; padding: 30px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-.mali-card h3 { color: var(--mm-blue); margin-bottom: 20px; border-bottom: 2px solid var(--gray-bg); padding-bottom: 10px; }
+/* Grid & Kartlar */
+.section-title { text-align: center; margin: 60px 0 40px; }
+.section-title h2 { color: var(--mm-blue); font-size: 2.2rem; }
+.mali-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
+.mali-card { background: white; padding: 35px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+.mali-card h3 { color: var(--mm-blue); border-bottom: 2px solid var(--bg-gray); padding-bottom: 12px; margin-bottom: 20px; }
 .mali-card ul { list-style: none; padding: 0; }
-.mali-card li { padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; }
+.mali-card li { padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 1rem; display: flex; align-items: center; gap: 10px; font-weight: 500; }
+.mali-card li i { color: var(--mm-blue); font-size: 0.9rem; }
 
-.gray-bg { background: var(--gray-bg); padding-bottom: 80px; }
-.rg-list { background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
-.rg-item { padding: 18px 25px; border-bottom: 1px solid #f1f5f9; transition: 0.2s; }
-.rg-item:hover { background: #fafafa; }
-.rg-item a { color: #334155; text-decoration: none; font-weight: 500; }
-
-.dark-section { background: var(--mm-blue); color: white; padding: 70px 0; }
+/* Diğer */
+.gray-bg { background: var(--bg-gray); padding: 20px 0 80px; }
+.rg-list { background: white; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.rg-item { padding: 20px 30px; border-bottom: 1px solid #f1f5f9; transition: 0.2s; }
+.rg-item a { color: #334155; text-decoration: none; font-weight: 600; font-size: 1.05rem; }
+.dark-section { background: var(--mm-blue); color: white; padding: 80px 0; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-.badge { background: #eab308; color: black; padding: 4px 12px; border-radius: 4px; font-weight: 800; font-size: 0.8rem; }
-.about-card { text-align: center; padding: 60px 0; max-width: 900px; margin: auto; }
-footer { background: #0f172a; color: #64748b; text-align: center; padding: 40px 0; }
+footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 40px 0; }
 
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .contact-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 1.8rem; }
 }
