@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 2. 2026 Verilerini Yükle
+    // 2. 2026 Verilerini Yükle (GİB ve Mevzuat Standartlı)
     render2026Data();
 
     // 3. Resmi Gazete Çek
@@ -17,33 +17,33 @@ document.addEventListener("DOMContentLoaded", function() {
 function render2026Data() {
     const data2026 = [
         {
-            title: "2026 Asgari Ücret & SGK",
+            title: "2026 Parametreleri",
             items: [
-                "Brüt Asgari Ücret: (Aralık 2025'te netleşecek)",
                 "SGK Taban: 20.002,50 TL (Güncel)",
                 "SGK Tavan: 150.018,75 TL (Güncel)",
-                "SGK İşsizlik Primi: %1 + %2",
-                "İşveren SGK Teşvik: 5 Puanlık İndirim"
+                "Fatura Kesme Sınırı: 6.900 TL",
+                "Amortisman Sınırı: 6.900 TL",
+                "Binek Araç Gider Kısıtlılığı: %70"
             ]
         },
         {
-            title: "2026 Vergi & Muafiyetler",
+            title: "Vergi & İstisnalar 2026",
             items: [
-                "Yemek İstisnası: 170,00 TL + KDV",
-                "Yol Yardımı: 88,00 TL (Günlük)",
-                "Binek Araç Gider Kısıtlaması: %70",
-                "Fatura Kesme Sınırı (VUK): 6.900 TL",
-                "Kira Stopajı: %20"
+                "Yemek Bedeli İstisnası: 170 TL + KDV",
+                "Yol Bedeli İstisnası: 88 TL (Günlük)",
+                "Engellilik İndirimi (1. Derece): 6.900 TL",
+                "Basit Usul Kazanç İstisnası: Mevcut",
+                "Mesken Kira İstisnası: 33.000 TL"
             ]
         },
         {
-            title: "Mali Takvim (GİB Senkron)",
+            title: "Mali Takvim (GİB)",
             items: [
-                "KDV/Muhtasar Beyan: Her ayın 28. günü",
-                "SGK Tahakkuk/Ödeme: Ayın son günü",
+                "KDV & Muhtasar: Takip eden ayın 28. günü",
+                "SGK Primleri: Takip eden ayın son günü",
                 "1. Geçici Vergi: 17 Mayıs 2026",
-                "2. Geçici Vergi: 17 Ağustos 2026",
-                "3. Geçici Vergi: 17 Kasım 2026"
+                "Yıllık Gelir Vergisi: Mart 2026 Sonu",
+                "Kurumlar Vergisi: Nisan 2026 Sonu"
             ]
         }
     ];
@@ -54,7 +54,7 @@ function render2026Data() {
             <div class="mali-card">
                 <h3>${section.title}</h3>
                 <ul>
-                    ${section.items.map(item => `<li><i class="fas fa-check-double"></i> ${item}</li>`).join('')}
+                    ${section.items.map(item => `<li><i class="fas fa-caret-right" style="color:#162a78"></i> ${item}</li>`).join('')}
                 </ul>
             </div>
         `).join('');
@@ -64,7 +64,6 @@ function render2026Data() {
 async function fetchResmiGazete() {
     const list = document.getElementById('resmi-gazete-list');
     const rssUrl = 'https://www.resmigazete.gov.tr/rss/resmigazete.xml';
-    // RSS verisini HTTPS güvenliğiyle çekmek için Proxy kullanıyoruz
     const proxy = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
     try {
@@ -75,12 +74,12 @@ async function fetchResmiGazete() {
             list.innerHTML = data.items.slice(0, 10).map(item => `
                 <div class="rg-item">
                     <a href="${item.link}" target="_blank">
-                        <i class="far fa-file-alt"></i> ${item.title}
+                        <i class="far fa-file-pdf" style="color:#162a78"></i> ${item.title}
                     </a>
                 </div>
             `).join('');
         }
     } catch (e) {
-        if(list) list.innerHTML = "<p style='padding:40px; text-align:center'>Şu an Resmi Gazete bağlantısı kuruluyor. Lütfen HTTPS ayarlarınızı kontrol edin veya sayfayı yenileyin.</p>";
+        if(list) list.innerHTML = "<p style='padding:40px; text-align:center'>Veriler çekiliyor, lütfen bekleyiniz...</p>";
     }
 }
