@@ -1,44 +1,44 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. Güncel Tarih
-    const dateEl = document.getElementById('date-now');
-    if(dateEl) {
-        dateEl.innerText = new Date().toLocaleDateString('tr-TR', { 
+    // 1. Tarihi Göster
+    const dateField = document.getElementById('live-date');
+    if(dateField) {
+        dateField.innerText = new Date().toLocaleDateString('tr-TR', { 
             day: 'numeric', month: 'long', year: 'numeric', weekday: 'long' 
         });
     }
 
-    // 2. 2026 Verileri (VUK 565 ve 2026 YDO Artışları Uygulanmış)
-    renderMuhasebeTRData();
+    // 2. 2026 Verilerini Yükle
+    initMaliData();
 
-    // 3. Resmi Gazete Akışı
-    fetchResmiGazete();
+    // 3. Resmi Gazete'yi Çek
+    fetchRG();
 });
 
-function renderMuhasebeTRData() {
-    // MuhasebeTR ve Resmi Tebliğlere göre 2026 kesinleşen/uygulanan değerler
-    const data = [
+function initMaliData() {
+    // MuhasebeTR ve VUK Tebliğlerine göre 2026 kesinleşen/uygulanan değerler
+    const content = [
         {
             title: "2026 İşçilik & SGK",
             items: [
-                "Brüt Asgari Ücret: 32.105,50 TL (2026 Ocak)",
-                "SGK Taban: 32.105,50 TL",
-                "SGK Tavan: 240.791,25 TL",
+                "Brüt Asgari Ücret: 32.105,50 TL",
+                "SGK Tabanı: 32.105,50 TL",
+                "SGK Tavanı: 240.791,25 TL",
                 "Günlük Asgari Ücret: 1.070,18 TL",
-                "SGK İdari Para Cezaları: 32.105,50 TL (Tam)"
+                "SGK İdari Para Cezası: 32.105,50 TL"
             ]
         },
         {
-            title: "2026 Vergi & İstisnalar",
+            title: "2026 Vergi Parametreleri",
             items: [
                 "Yemek İstisnası (Günlük): 245 TL + KDV",
                 "Yol İstisnası (Günlük): 122 TL",
-                "Fatura Kesme Sınırı (VUK): 10.000 TL",
+                "Fatura Kesme Sınırı: 10.000 TL",
                 "Amortisman Sınırı: 10.000 TL",
-                "Binek Araç Kiralama Gider Kısıtı: 42.000 TL"
+                "Binek Araç Gider Kısıtı: 42.000 TL"
             ]
         },
         {
-            title: "2026 GİB Vergi Takvimi",
+            title: "Önemli Beyan Takvimi",
             items: [
                 "KDV & Muhtasar: Takip eden ayın 28. günü",
                 "SGK Prim Ödemesi: Takip eden ayın son günü",
@@ -49,38 +49,36 @@ function renderMuhasebeTRData() {
         }
     ];
 
-    const container = document.getElementById('mali-data-grid');
-    if(container) {
-        container.innerHTML = data.map(section => `
+    const target = document.getElementById('mali-data-list');
+    if(target) {
+        target.innerHTML = content.map(card => `
             <div class="mali-card">
-                <h3>${section.title}</h3>
+                <h3>${card.title}</h3>
                 <ul>
-                    ${section.items.map(item => `<li><i class="fas fa-caret-right"></i> ${item}</li>`).join('')}
+                    ${card.items.map(item => `<li><i class="fas fa-angle-right"></i> ${item}</li>`).join('')}
                 </ul>
             </div>
         `).join('');
     }
 }
 
-async function fetchResmiGazete() {
-    const list = document.getElementById('rg-feed-container');
-    const rssUrl = 'https://www.resmigazete.gov.tr/rss/resmigazete.xml';
-    const proxy = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+async function fetchRG() {
+    const listDiv = document.getElementById('resmi-gazete-content');
+    const rss = 'https://www.resmigazete.gov.tr/rss/resmigazete.xml';
+    const proxy = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}`;
 
     try {
         const response = await fetch(proxy);
         const data = await response.json();
 
-        if (data.status === 'ok' && list) {
-            list.innerHTML = data.items.slice(0, 10).map(item => `
-                <div class="rg-item">
-                    <a href="${item.link}" target="_blank">
-                        <i class="far fa-file-pdf" style="color:#162a78; margin-right:12px"></i> ${item.title}
-                    </a>
-                </div>
+        if (data.status === 'ok' && listDiv) {
+            listDiv.innerHTML = data.items.slice(0, 10).map(item => `
+                <a href="${item.link}" target="_blank" class="rg-row">
+                    <i class="far fa-file-alt" style="margin-right:15px; color:#162a78"></i> ${item.title}
+                </a>
             `).join('');
         }
     } catch (e) {
-        if(list) list.innerHTML = "<p style='padding:40px; text-align:center; color:#64748b'>Mevzuat verileri güncelleniyor, lütfen sayfayı yenileyiniz.</p>";
+        if(listDiv) listDiv.innerHTML = "<p style='padding:40px; text-align:center'>Şu an veriler çekilemiyor, lütfen daha sonra tekrar deneyiniz.</p>";
     }
 }
