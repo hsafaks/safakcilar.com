@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMMM Hasan Şafakçılar | 2026 Güncel Mali Mevzuat</title>
+    <title>SMMM Hasan Şafakçılar | 2026 Güncel Mali Veriler</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -13,11 +13,11 @@
     <nav>
         <div class="container nav-flex">
             <div class="logo-area">
-                <!-- Görseldeki Birebir MM Logo Tasarımı -->
-                <div class="mm-outer-box">
-                    <div class="mm-inner-border">
-                        <span class="m-big">M</span>
-                        <span class="m-small">m</span>
+                <!-- Görseldeki Birebir Çift Çerçeveli MM Logo -->
+                <div class="mm-box-outer">
+                    <div class="mm-box-inner">
+                        <span class="m-large">M</span>
+                        <span class="m-upper">m</span>
                     </div>
                 </div>
                 <div class="logo-text">
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <ul class="nav-links">
-                <li><a href="#mali-veriler">2026 Parametreleri</a></li>
+                <li><a href="#mali-veriler">2026 Pratik Bilgiler</a></li>
                 <li><a href="#resmi-gazete">Resmi Gazete</a></li>
                 <li><a href="#iletisim">İletişim</a></li>
             </ul>
@@ -35,10 +35,10 @@
 
     <header class="hero">
         <div class="container">
-            <h1>2026 Mali Mevzuat ve Finansal Rehberlik</h1>
-            <p>Hasan Şafakçılar ile Mevzuata Tam Uyum, Güçlü Finansal Yönetim</p>
+            <h1>2026 Mali Mevzuat ve Pratik Bilgiler</h1>
+            <p>MuhasebeTR ve GİB Verileriyle Güncel Teknik Rehber</p>
             <div class="hero-actions">
-                <a href="#mali-veriler" class="btn btn-primary">2026 Güncel Veriler</a>
+                <a href="#mali-veriler" class="btn btn-primary">2026 Mevzuat Verileri</a>
                 <a href="https://wa.me/905053109128" target="_blank" class="btn btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> WhatsApp İletişim
                 </a>
@@ -48,41 +48,41 @@
 
     <section id="mali-veriler" class="container">
         <div class="section-title">
-            <h2>2026 Yılı Pratik Mali Bilgiler</h2>
-            <p id="current-date-display"></p>
+            <h2>2026 Yılı Güncel Pratik Bilgiler</h2>
+            <p id="date-now"></p>
         </div>
-        <div class="mali-grid" id="mali-data-container">
-            <!-- Veriler JS ile Alomaliye/Resmi veriler ışığında yüklenecek -->
+        <div class="mali-grid" id="mali-data-grid">
+            <!-- Veriler MuhasebeTR standartlarında JS ile gelecek -->
         </div>
     </section>
 
     <section id="resmi-gazete" class="gray-bg">
         <div class="container">
             <div class="section-title">
-                <h2><i class="fas fa-file-invoice-dollar"></i> Günlük Resmi Gazete Takibi</h2>
-                <p>Mali ve Hukuki Mevzuat Değişiklikleri (Anlık)</p>
+                <h2><i class="fas fa-balance-scale"></i> Günlük Resmi Gazete Başlıkları</h2>
+                <p>Mali, Hukuki ve Mevzuat Değişiklikleri</p>
             </div>
-            <div id="resmi-gazete-list" class="rg-list">
-                <!-- JS ile dolacak -->
+            <div id="rg-feed-container" class="rg-list-style">
+                <!-- Resmi Gazete Başlıkları -->
             </div>
             <div class="rg-footer">
-                <a href="https://www.resmigazete.gov.tr" target="_blank" class="btn-outline">Tüm Mevzuat Arşivi</a>
+                <a href="https://www.resmigazete.gov.tr" target="_blank" class="btn-outline">Resmi Gazete'ye Git</a>
             </div>
         </div>
     </section>
 
-    <section id="iletisim" class="dark-section">
+    <section id="iletisim" class="dark-info">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>İletişim Detayları</h3>
+                <div class="contact-details">
+                    <h3>İletişim Bilgileri</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Fevzi Çakmak Mh. 10753 Sok. No:3 Karatay / KONYA</p>
                     <p><i class="fas fa-phone"></i> 0 (505) 310 91 28</p>
                     <p><i class="fas fa-envelope"></i> hasan@safakcilar.com</p>
                 </div>
-                <div class="contact-hours">
+                <div class="work-hours">
                     <h3>Çalışma Saatleri</h3>
-                    <p>Pazartesi - Cuma: 09:00 - 18:00</p>
+                    <p>Hafta İçi: 09:00 - 18:00</p>
                     <p>Cumartesi: 10:00 - 14:00</p>
                 </div>
             </div>
@@ -90,9 +90,7 @@
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Hasan Şafakçılar | SMMM</p>
-        </div>
+        <p>&copy; 2026 Hasan Şafakçılar | Serbest Muhasebeci Mali Müşavir</p>
     </footer>
 
     <script src="script.js"></script>
