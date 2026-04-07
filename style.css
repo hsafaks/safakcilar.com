@@ -1,48 +1,48 @@
 :root {
-    --brand-blue: #162a78;
-    --brand-green: #25d366;
-    --soft-gray: #f1f5f9;
+    --mm-blue: #162a78;
+    --mm-green: #25d366;
+    --gray-bg: #f1f5f9;
 }
 
-body { font-family: 'Inter', sans-serif; margin: 0; color: #334155; scroll-behavior: smooth; background: #fff; }
+body { font-family: 'Inter', sans-serif; margin: 0; color: #334155; scroll-behavior: smooth; }
 .container { width: 92%; max-width: 1200px; margin: auto; }
 
-/* MM LOGO - GÖRSELDEKİ BİREBİR KUTU TASARIMI */
-.mm-logo-container {
-    width: 60px;
-    height: 60px;
-    background-color: var(--brand-blue);
+/* RESMİ MM LOGO - GÖRSELDEKİ ÇİFT ÇERÇEVELİ TASARIM */
+.mm-official-frame {
+    width: 65px;
+    height: 65px;
+    background-color: var(--mm-blue);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4px;
+    padding: 3px;
     box-sizing: border-box;
 }
 
-.mm-inner-box {
+.mm-white-border {
     width: 100%;
     height: 100%;
-    border: 2px solid #ffffff; /* Beyaz çerçeve çizgisi */
+    border: 2px solid #ffffff;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.m-big-char {
-    color: white;
-    font-size: 42px;
+.m-big {
+    color: #ffffff;
+    font-size: 46px;
     font-weight: 800;
     line-height: 1;
     margin-right: 6px;
 }
 
-.m-small-char {
-    color: white;
-    font-size: 18px;
+.m-small {
+    color: #ffffff;
+    font-size: 20px;
     font-weight: 600;
     position: absolute;
-    top: 3px;
+    top: 2px;
     right: 4px;
 }
 
@@ -50,42 +50,42 @@ body { font-family: 'Inter', sans-serif; margin: 0; color: #334155; scroll-behav
 nav { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000; padding: 12px 0; }
 .nav-flex { display: flex; justify-content: space-between; align-items: center; }
 .logo-area { display: flex; align-items: center; gap: 15px; }
-.name-brand { font-weight: 800; font-size: 1.6rem; color: var(--brand-blue); line-height: 1; }
-.title-sub { font-size: 0.85rem; color: #64748b; font-weight: 600; text-transform: uppercase; margin-top: 5px; display: block; }
-.nav-links { display: flex; list-style: none; gap: 25px; }
-.nav-links a { text-decoration: none; color: var(--brand-blue); font-weight: 700; }
+.brand-name { font-weight: 800; font-size: 1.5rem; color: var(--mm-blue); line-height: 1; }
+.brand-title { font-size: 0.8rem; color: #64748b; font-weight: 600; text-transform: uppercase; margin-top: 5px; display: block; }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { text-decoration: none; color: var(--mm-blue); font-weight: 700; font-size: 0.95rem; }
 
-/* Hero */
-.hero { background: var(--brand-blue); color: white; padding: 80px 0; text-align: center; }
-.hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
-.btn { padding: 14px 32px; border-radius: 4px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; }
-.btn-white { background: white; color: var(--brand-blue); }
-.btn-green { background: var(--brand-green); color: white; margin-left: 10px; }
-.btn-outline { border: 2px solid var(--brand-blue); color: var(--brand-blue); font-weight: 700; text-decoration: none; padding: 10px 25px; display: inline-block; }
+/* Hero Bölümü */
+.hero { background: var(--mm-blue); color: white; padding: 80px 0; text-align: center; }
+.hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+.btn { padding: 12px 30px; border-radius: 4px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; }
+.btn-white { background: white; color: var(--mm-blue); }
+.btn-green { background: var(--mm-green); color: white; margin-left: 10px; }
+.btn-outline { border: 2px solid var(--mm-blue); color: var(--mm-blue); margin-top: 25px; padding: 10px 20px; }
 
-/* Grid ve Veriler */
-.section-header { text-align: center; margin: 60px 0 40px; }
-.section-header h2 { color: var(--brand-blue); font-size: 2.2rem; margin-bottom: 5px; }
-.mali-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding-bottom: 60px; }
-.mali-card { background: white; padding: 35px; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.03); }
-.mali-card h3 { color: var(--brand-blue); border-bottom: 2px solid var(--soft-gray); padding-bottom: 15px; margin-bottom: 20px; }
+/* Kartlar */
+.section-title { text-align: center; margin: 60px 0 40px; }
+.section-title h2 { color: var(--mm-blue); font-size: 2rem; }
+.mali-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; padding-bottom: 60px; }
+.mali-card { background: white; padding: 30px; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+.mali-card h3 { color: var(--mm-blue); margin-bottom: 20px; border-bottom: 2px solid var(--gray-bg); padding-bottom: 10px; }
 .mali-card ul { list-style: none; padding: 0; }
-.mali-card li { padding: 12px 0; border-bottom: 1px solid #f8fafc; font-size: 1rem; display: flex; align-items: center; gap: 12px; font-weight: 500; }
-.mali-card li i { color: var(--brand-blue); font-size: 0.8rem; }
+.mali-card li { padding: 10px 0; border-bottom: 1px solid #f8fafc; font-size: 0.95rem; font-weight: 500; display: flex; align-items: center; gap: 10px; }
+.mali-card li i { color: var(--mm-blue); font-size: 0.8rem; }
 
 /* Resmi Gazete */
-.bg-gray { background: var(--soft-gray); padding: 20px 0 80px; }
-.rg-card { background: white; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-.rg-row { padding: 18px 30px; border-bottom: 1px solid #f1f5f9; display: block; text-decoration: none; color: #334155; font-weight: 600; font-size: 1.05rem; }
-.rg-row:hover { background: #fafafa; color: var(--brand-blue); }
-.rg-more { text-align: center; margin-top: 30px; }
+.gray-section { background: var(--gray-bg); padding-bottom: 80px; }
+.rg-box { background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.rg-link { padding: 20px 30px; border-bottom: 1px solid #f1f5f9; display: block; text-decoration: none; color: #334155; font-weight: 600; font-size: 1rem; }
+.rg-link:hover { background: #fafafa; color: var(--mm-blue); }
+.rg-center { text-align: center; margin-top: 30px; }
 
-.footer-contact { background: var(--brand-blue); color: white; padding: 70px 0; }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.navy-footer { background: var(--mm-blue); color: white; padding: 70px 0; }
+.contact-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
 footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 40px 0; }
 
 @media (max-width: 768px) {
     .nav-links { display: none; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2rem; }
+    .contact-flex { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.8rem; }
 }
