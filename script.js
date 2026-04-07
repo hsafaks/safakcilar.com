@@ -1,61 +1,61 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. Tarih Güncelleme
-    const dateDisplay = document.getElementById('current-date-display');
-    if(dateDisplay) {
-        dateDisplay.innerText = new Date().toLocaleDateString('tr-TR', { 
+    // 1. Güncel Tarih
+    const dateEl = document.getElementById('date-now');
+    if(dateEl) {
+        dateEl.innerText = new Date().toLocaleDateString('tr-TR', { 
             day: 'numeric', month: 'long', year: 'numeric', weekday: 'long' 
         });
     }
 
-    // 2. 2026 Parametrelerini Yükle (Alomaliye / Mevzuat Referanslı)
-    render2026AlomaliyeData();
+    // 2. 2026 Verileri (VUK 565 ve 2026 YDO Artışları Uygulanmış)
+    renderMuhasebeTRData();
 
-    // 3. Resmi Gazete Akışını Başlat
+    // 3. Resmi Gazete Akışı
     fetchResmiGazete();
 });
 
-function render2026AlomaliyeData() {
-    // 2026 yılı için güncellenmiş (tahmini artışlar ve kesinleşen parametreler)
-    const alomaliyeData = [
+function renderMuhasebeTRData() {
+    // MuhasebeTR ve Resmi Tebliğlere göre 2026 kesinleşen/uygulanan değerler
+    const data = [
         {
-            title: "2026 SGK & İşçilik Bilgileri",
+            title: "2026 İşçilik & SGK",
             items: [
-                "Brüt Asgari Ücret: 30.003,75 TL (Tahmini)",
-                "SGK Tabanı: 30.003,75 TL",
-                "SGK Tavanı: 225.028,13 TL",
-                "İşveren SGK Payı: %15,5 (5 Puan İnd. ile)",
-                "İşsizlik Sigortası Payı: %1 İşçi + %2 İşv."
+                "Brüt Asgari Ücret: 32.105,50 TL (2026 Ocak)",
+                "SGK Taban: 32.105,50 TL",
+                "SGK Tavan: 240.791,25 TL",
+                "Günlük Asgari Ücret: 1.070,18 TL",
+                "SGK İdari Para Cezaları: 32.105,50 TL (Tam)"
             ]
         },
         {
-            title: "2026 Vergi & Gider Sınırları",
+            title: "2026 Vergi & İstisnalar",
             items: [
-                "Yemek İstisnası (Günlük): 260 TL + KDV",
-                "Yol İstisnası (Günlük): 130 TL",
-                "Amortisman Sınırı: 10.500 TL",
-                "Fatura Kesme Sınırı: 10.500 TL",
+                "Yemek İstisnası (Günlük): 245 TL + KDV",
+                "Yol İstisnası (Günlük): 122 TL",
+                "Fatura Kesme Sınırı (VUK): 10.000 TL",
+                "Amortisman Sınırı: 10.000 TL",
                 "Binek Araç Kiralama Gider Kısıtı: 42.000 TL"
             ]
         },
         {
-            title: "2026 Önemli Takvim (GİB)",
+            title: "2026 GİB Vergi Takvimi",
             items: [
-                "KDV2 Beyannamesi: Her Ayın 25. Günü",
-                "Muhtasar ve KDV: Her Ayın 28. Günü",
-                "SGK Prim Ödemesi: Takip Eden Ayın Sonu",
+                "KDV & Muhtasar: Takip eden ayın 28. günü",
+                "SGK Prim Ödemesi: Takip eden ayın son günü",
                 "1. Geçici Vergi: 17 Mayıs 2026",
-                "Kurumlar Vergisi Beyanı: Nisan Sonu"
+                "Gelir Vergisi Beyanı: 31 Mart 2026",
+                "Kurumlar Vergisi Beyanı: 30 Nisan 2026"
             ]
         }
     ];
 
-    const container = document.getElementById('mali-data-container');
+    const container = document.getElementById('mali-data-grid');
     if(container) {
-        container.innerHTML = alomaliyeData.map(section => `
+        container.innerHTML = data.map(section => `
             <div class="mali-card">
                 <h3>${section.title}</h3>
                 <ul>
-                    ${section.items.map(item => `<li><i class="fas fa-chevron-right"></i> ${item}</li>`).join('')}
+                    ${section.items.map(item => `<li><i class="fas fa-caret-right"></i> ${item}</li>`).join('')}
                 </ul>
             </div>
         `).join('');
@@ -63,9 +63,8 @@ function render2026AlomaliyeData() {
 }
 
 async function fetchResmiGazete() {
-    const list = document.getElementById('resmi-gazete-list');
+    const list = document.getElementById('rg-feed-container');
     const rssUrl = 'https://www.resmigazete.gov.tr/rss/resmigazete.xml';
-    // Güvenli RSS Proxy
     const proxy = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
     try {
@@ -76,12 +75,12 @@ async function fetchResmiGazete() {
             list.innerHTML = data.items.slice(0, 10).map(item => `
                 <div class="rg-item">
                     <a href="${item.link}" target="_blank">
-                        <i class="far fa-file-alt" style="color:#162a78; margin-right:12px"></i> ${item.title}
+                        <i class="far fa-file-pdf" style="color:#162a78; margin-right:12px"></i> ${item.title}
                     </a>
                 </div>
             `).join('');
         }
     } catch (e) {
-        if(list) list.innerHTML = "<p style='padding:40px; text-align:center'>Veriler GİB ve Resmi Gazete sisteminden güncelleniyor, lütfen bekleyiniz...</p>";
+        if(list) list.innerHTML = "<p style='padding:40px; text-align:center; color:#64748b'>Mevzuat verileri güncelleniyor, lütfen sayfayı yenileyiniz.</p>";
     }
 }
