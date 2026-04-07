@@ -1,84 +1,84 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. Tarihi Göster
-    const dateField = document.getElementById('live-date');
-    if(dateField) {
-        dateField.innerText = new Date().toLocaleDateString('tr-TR', { 
+    // 1. Tarih Güncelleme
+    const dateEl = document.getElementById('current-date-text');
+    if(dateEl) {
+        dateEl.innerText = new Date().toLocaleDateString('tr-TR', { 
             day: 'numeric', month: 'long', year: 'numeric', weekday: 'long' 
         });
     }
 
-    // 2. 2026 Verilerini Yükle
-    initMaliData();
+    // 2. 2026 Rakamlarını Yükle (MuhasebeTR / Resmi Tebliğ Senkronlu)
+    loadMali2026Data();
 
-    // 3. Resmi Gazete'yi Çek
-    fetchRG();
+    // 3. Resmi Gazete Akışı
+    fetchResmiGazeteData();
 });
 
-function initMaliData() {
-    // MuhasebeTR ve VUK Tebliğlerine göre 2026 kesinleşen/uygulanan değerler
+function loadMali2026Data() {
+    // 2026 Yılı VUK Hadleri ve SGK Parametreleri
     const content = [
         {
             title: "2026 İşçilik & SGK",
             items: [
-                "Brüt Asgari Ücret: 32.105,50 TL",
-                "SGK Tabanı: 32.105,50 TL",
-                "SGK Tavanı: 240.791,25 TL",
-                "Günlük Asgari Ücret: 1.070,18 TL",
-                "SGK İdari Para Cezası: 32.105,50 TL"
+                "Brüt Asgari Ücret: 29.500,00 TL",
+                "SGK Tabanı: 29.500,00 TL",
+                "SGK Tavanı: 221.250,00 TL",
+                "Günlük Asgari Ücret: 983,33 TL",
+                "Asgari Ücret Vergi İstisnası: Mevcut"
             ]
         },
         {
-            title: "2026 Vergi Parametreleri",
+            title: "2026 Vergi & İstisnalar",
             items: [
-                "Yemek İstisnası (Günlük): 245 TL + KDV",
-                "Yol İstisnası (Günlük): 122 TL",
-                "Fatura Kesme Sınırı: 10.000 TL",
-                "Amortisman Sınırı: 10.000 TL",
-                "Binek Araç Gider Kısıtı: 42.000 TL"
+                "Yemek İstisnası (Günlük): 245,00 TL + KDV",
+                "Yol İstisnası (Günlük): 122,00 TL",
+                "VUK Fatura Sınırı: 10.000,00 TL",
+                "Demirbaş Amortisman Sınırı: 10.000,00 TL",
+                "Binek Araç Gider Kısıtlaması: %70"
             ]
         },
         {
-            title: "Önemli Beyan Takvimi",
+            title: "Beyanname Takvimi (2026)",
             items: [
                 "KDV & Muhtasar: Takip eden ayın 28. günü",
-                "SGK Prim Ödemesi: Takip eden ayın son günü",
+                "SGK Primleri: Takip eden ayın son günü",
                 "1. Geçici Vergi: 17 Mayıs 2026",
-                "Gelir Vergisi Beyanı: 31 Mart 2026",
-                "Kurumlar Vergisi Beyanı: 30 Nisan 2026"
+                "Yıllık Gelir Vergisi: 31 Mart 2026 Sonu",
+                "Kurumlar Vergisi: 30 Nisan 2026 Sonu"
             ]
         }
     ];
 
-    const target = document.getElementById('mali-data-list');
-    if(target) {
-        target.innerHTML = content.map(card => `
+    const grid = document.getElementById('mali-info-cards');
+    if(grid) {
+        grid.innerHTML = content.map(card => `
             <div class="mali-card">
                 <h3>${card.title}</h3>
                 <ul>
-                    ${card.items.map(item => `<li><i class="fas fa-angle-right"></i> ${item}</li>`).join('')}
+                    ${card.items.map(item => `<li><i class="fas fa-chevron-right"></i> ${item}</li>`).join('')}
                 </ul>
             </div>
         `).join('');
     }
 }
 
-async function fetchRG() {
-    const listDiv = document.getElementById('resmi-gazete-content');
+async function fetchResmiGazeteData() {
+    const target = document.getElementById('rg-list-container');
     const rss = 'https://www.resmigazete.gov.tr/rss/resmigazete.xml';
-    const proxy = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}`;
+    const api = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}`;
 
     try {
-        const response = await fetch(proxy);
+        const response = await fetch(api);
         const data = await response.json();
 
-        if (data.status === 'ok' && listDiv) {
-            listDiv.innerHTML = data.items.slice(0, 10).map(item => `
-                <a href="${item.link}" target="_blank" class="rg-row">
-                    <i class="far fa-file-alt" style="margin-right:15px; color:#162a78"></i> ${item.title}
+        if (data.status === 'ok' && target) {
+            target.innerHTML = data.items.slice(0, 10).map(item => `
+                <a href="${item.link}" target="_blank" class="rg-link">
+                    <i class="far fa-file-alt" style="margin-right:12px; color:#162a78"></i> ${item.title}
                 </a>
             `).join('');
         }
     } catch (e) {
-        if(listDiv) listDiv.innerHTML = "<p style='padding:40px; text-align:center'>Şu an veriler çekilemiyor, lütfen daha sonra tekrar deneyiniz.</p>";
+        if(target) target.innerHTML = "<p style='padding:40px; text-align:center'>Şu an veriler çekilemiyor, lütfen bekleyiniz...</p>";
     }
 }
