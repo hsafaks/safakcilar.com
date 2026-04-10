@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMMM Hasan ŞAFAKÇILAR | 2026 Güncel Pratik Bilgiler</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #0D2137; --navy2: #163352; --gold: #B8952A; --gold2: #D4AF50;
+  --cream: #F6F3EC; --cream2: #EDE8DC; --white: #FFFFFF;
+  --text: #1C2B3A; --muted: #5E6E82; --border: rgba(184,149,42,0.18);
+  --green: #1A7A4A; --green2: #22A863;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 15px; line-height: 1.6; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+/* ── NAV ── */
+nav { background: var(--navy); position: sticky; top: 0; z-index: 200; border-bottom: 2px solid var(--gold); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 13px 28px; max-width: 1100px; margin: 0 auto; }
+.logo-area { display: flex; align-items: center; gap: 14px; }
+.mm-logo-svg { flex-shrink: 0; width: 52px; height: 52px; }
+.logo-text { display: flex; flex-direction: column; }
+.logo-name { font-family: 'Libre Baskerville', serif; font-size: 16px; font-weight: 700; color: var(--white); letter-spacing: 0.5px; line-height: 1.2; }
+.logo-sub { font-size: 10.5px; color: var(--gold2); letter-spacing: 1.8px; text-transform: uppercase; font-weight: 300; margin-top: 2px; }
+.nav-links { display: flex; list-style: none; gap: 2px; align-items: center; }
+.nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13px; padding: 7px 15px; border-radius: 3px; transition: all 0.18s; }
+.nav-links a:hover { color: var(--gold2); background: rgba(184,149,42,0.1); }
+.nav-wa { background: var(--green) !important; color: var(--white) !important; border-radius: 4px; }
+.nav-wa:hover { background: var(--green2) !important; }
+
+/* ── TICKER ── */
+.ticker-bar { background: var(--navy2); border-bottom: 1px solid var(--border); padding: 7px 0; overflow: hidden; }
+.ticker-inner { display: flex; align-items: center; }
+.ticker-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); white-space: nowrap; padding: 0 20px 0 28px; border-right: 1px solid var(--border); margin-right: 20px; display: flex; align-items: center; gap: 7px; }
+.live-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 1.5s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.ticker-scroll { flex: 1; overflow: hidden; }
+.ticker-track { display: flex; gap: 60px; animation: marquee 55s linear infinite; white-space: nowrap; }
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.t-item { font-size: 12px; color: rgba(255,255,255,0.65); font-weight: 300; }
+.t-item b { color: var(--gold2); font-weight: 500; margin-right: 7px; }
+
+/* ── HERO ── */
+.hero { background: var(--navy); padding: 58px 28px 52px; position: relative; overflow: hidden; }
+.hero::before { content:''; position:absolute; right:5%; top:50%; transform:translateY(-50%); width:340px; height:340px; border:1px solid rgba(184,149,42,0.07); border-radius:50%; pointer-events:none; }
+.hero::after  { content:''; position:absolute; right:10%; top:50%; transform:translateY(-50%); width:200px; height:200px; border:1px solid rgba(184,149,42,0.05); border-radius:50%; pointer-events:none; }
+.hero-content { max-width: 600px; position: relative; z-index: 1; }
+.hero-eyebrow { font-size: 10.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold2); font-weight: 500; margin-bottom: 16px; }
+.hero h1 { font-family: 'Libre Baskerville', serif; font-size: 34px; font-weight: 700; color: var(--white); line-height: 1.28; margin-bottom: 14px; }
+.hero h1 em { color: var(--gold2); font-style: normal; }
+.hero-sub { font-size: 15px; color: rgba(255,255,255,0.6); font-weight: 300; margin-bottom: 32px; max-width: 500px; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-cream { background: var(--cream); color: var(--navy); border: none; padding: 11px 24px; font-size: 13px; font-weight: 600; border-radius: 4px; cursor: pointer; text-decoration: none; transition: all 0.18s; display: inline-flex; align-items: center; gap: 7px; font-family: 'DM Sans', sans-serif; }
+.btn-cream:hover { background: var(--white); }
+.btn-wa { background: var(--green); color: var(--white); border: none; padding: 11px 24px; font-size: 13px; font-weight: 500; border-radius: 4px; cursor: pointer; text-decoration: none; transition: all 0.18s; display: inline-flex; align-items: center; gap: 7px; font-family: 'DM Sans', sans-serif; }
+.btn-wa:hover { background: var(--green2); }
+
+/* ── SECTION ── */
+.section { padding: 52px 0; }
+.sec-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+.sec-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 6px; }
+.sec-head h2 { font-family: 'Libre Baskerville', serif; font-size: 22px; font-weight: 700; color: var(--navy); }
+.sec-date { font-size: 12px; color: var(--muted); }
+
+/* ── KARTLAR ── */
+.cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.info-card { background: var(--white); border: 1px solid rgba(184,149,42,0.12); border-radius: 8px; overflow: hidden; transition: box-shadow 0.18s; }
+.info-card:hover { box-shadow: 0 4px 20px rgba(13,33,55,0.08); }
+.card-head { background: var(--navy); padding: 14px 18px; display: flex; align-items: center; gap: 10px; }
+.card-icon { width: 32px; height: 32px; background: rgba(184,149,42,0.15); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+.card-title { font-size: 13px; font-weight: 600; color: var(--white); letter-spacing: 0.3px; }
+.data-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 18px; border-bottom: 1px solid rgba(0,0,0,0.04); gap: 8px; }
+.data-row:last-child { border-bottom: none; }
+.data-label { font-size: 12.5px; color: var(--muted); font-weight: 400; flex: 1; line-height: 1.35; }
+.data-val { font-size: 13px; font-weight: 600; color: var(--navy); white-space: nowrap; text-align: right; }
+.data-val.gold { color: var(--gold); }
+.data-val.green { color: var(--green); }
+
+/* ── RESMİ GAZETE ── */
+.rg-section { background: var(--cream2); padding: 52px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.rg-filters { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.rg-date-btn { padding: 6px 14px; font-size: 12px; border: 1px solid var(--border); border-radius: 3px; background: transparent; color: var(--muted); cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+.rg-date-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+.rg-date-btn:hover:not(.active) { border-color: var(--gold); color: var(--gold); }
+.rg-search-row { display: flex; gap: 8px; margin-bottom: 16px; }
+.rg-search-row input { flex: 1; padding: 9px 14px; font-size: 13px; border: 1px solid var(--border); border-radius: 4px; background: var(--white); color: var(--text); font-family: 'DM Sans', sans-serif; outline: none; }
+.rg-search-row input:focus { border-color: var(--gold); }
+.rg-search-row button { padding: 9px 20px; background: var(--navy); color: var(--white); border: none; border-radius: 4px; font-size: 12.5px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.15s; }
+.rg-search-row button:hover { background: var(--navy2); }
+.rg-list { display: flex; flex-direction: column; gap: 4px; }
+.rg-item { background: var(--white); border-radius: 5px; padding: 14px 18px; display: flex; gap: 14px; align-items: flex-start; cursor: pointer; transition: all 0.15s; border: 1px solid transparent; text-decoration: none; color: inherit; }
+.rg-item:hover { border-color: var(--border); box-shadow: 0 2px 8px rgba(13,33,55,0.05); }
+.rg-badge { flex-shrink: 0; font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; padding: 3px 8px; border-radius: 3px; margin-top: 2px; white-space: nowrap; }
+.b-teblig     { background:#EBF5FB; color:#1A5F8A; border:1px solid #AED6F1; }
+.b-yonetmelik { background:#EAFAF1; color:#1A6B3C; border:1px solid #A9DFBF; }
+.b-kanun      { background:#FEF9E7; color:#7D6608; border:1px solid #F9E79F; }
+.b-cbk        { background:#FDEDEC; color:#922B21; border:1px solid #F1948A; }
+.b-karar      { background:#F5EEF8; color:#7D3C98; border:1px solid #D2B4DE; }
+.b-genbel     { background:#FEF5E7; color:#9A4A00; border:1px solid #FAD7A0; }
+.b-ilan       { background:#F0F3F4; color:#4A5568; border:1px solid #CDD3D6; }
+.b-diger      { background:#F0F3F4; color:#4A5568; border:1px solid #CDD3D6; }
+.rg-text h4 { font-size: 13.5px; font-weight: 500; color: var(--navy); line-height: 1.45; margin-bottom: 4px; }
+.rg-meta { display: flex; gap: 14px; font-size: 11.5px; color: var(--muted); flex-wrap: wrap; }
+.rg-loading { padding: 36px; text-align: center; color: var(--muted); font-size: 13px; background: var(--white); border-radius: 5px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.rg-spinner { width: 18px; height: 18px; border: 2px solid var(--border); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite; flex-shrink: 0; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.rg-empty { padding: 36px; text-align: center; color: var(--muted); font-size: 13px; background: var(--white); border-radius: 5px; }
+.rg-empty a { color: var(--gold); }
+.rg-live-badge { display: none; align-items: center; gap: 6px; font-size: 11px; color: var(--green); font-weight: 500; padding: 4px 10px; background: rgba(26,122,74,0.08); border: 1px solid rgba(26,122,74,0.2); border-radius: 20px; }
+.rg-link-row { margin-top: 24px; text-align: center; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-outline { display: inline-block; padding: 10px 28px; border: 1.5px solid var(--navy); color: var(--navy); font-size: 13px; font-weight: 500; border-radius: 4px; text-decoration: none; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+.btn-outline:hover { background: var(--navy); color: var(--white); }
+
+/* ── İLETİŞİM ── */
+.contact-section { background: var(--navy); padding: 48px 0 36px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+.contact-col h3 { font-family: 'Libre Baskerville', serif; font-size: 16px; color: var(--gold2); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.contact-col p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.9; }
+.hours-row { display: flex; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.6); padding: 5px 0; border-bottom: 1px solid rgba(184,149,42,0.07); }
+.hours-row .day { color: rgba(255,255,255,0.4); }
+.contact-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: var(--white); padding: 10px 22px; border-radius: 4px; font-size: 13px; font-weight: 500; text-decoration: none; margin-top: 14px; transition: background 0.15s; }
+.contact-cta:hover { background: var(--green2); }
+.footer-bar { background: var(--navy2); border-top: 1px solid var(--border); padding: 14px 28px; text-align: center; }
+.footer-bar p { font-size: 11.5px; color: rgba(255,255,255,0.3); }
+
+@media (max-width: 860px) {
+  .cards-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 580px) {
+  .cards-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 26px; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo-area">
+      <svg class="mm-logo-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <rect width="60" height="60" rx="2" fill="#1B3A6B"/>
+        <rect x="4" y="4" width="52" height="52" rx="1" fill="none" stroke="white" stroke-width="2"/>
+        <text x="7" y="47" font-family="'Times New Roman', Georgia, serif" font-size="40" font-weight="700" fill="white">M</text>
+        <text x="37" y="24" font-family="'Times New Roman', Georgia, serif" font-size="18" font-weight="400" fill="white">m</text>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name">HASAN ŞAFAKÇILAR</span>
+        <span class="logo-sub">Serbest Muhasebeci Mali Müşavir</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#pratik">2026 Pratik Bilgiler</a></li>
+      <li><a href="#rgazete">Resmi Gazete</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+      <li><a href="https://wa.me/905053109128" target="_blank" class="nav-wa">📱 WhatsApp</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-inner">
+    <div class="ticker-label"><span class="live-dot"></span>RESMİ GAZETE</div>
+    <div class="ticker-scroll">
+      <div class="ticker-track" id="ticker-track">
+        <span class="t-item"><b>Yükleniyor...</b> Resmi Gazete bağlanıyor</span>
+        <span class="t-item"><b>Yükleniyor...</b> Resmi Gazete bağlanıyor</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content container">
+    <p class="hero-eyebrow">Mali Müşavirlik · Konya · SMMM</p>
+    <h1>2026 Mali Mevzuat ve<br><em>Finansal Rehberlik</em></h1>
+    <p class="hero-sub">25 yılı aşkın tecrübemizle mali müşavirlik ve vergi danışmanlığı.</p>
+    <div class="hero-btns">
+      <a href="#pratik" class="btn-cream">📋 2026 Pratik Bilgiler</a>
+      <a href="https://wa.me/905053109128" target="_blank" class="btn-wa">📱 WhatsApp İletişim</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRATİK BİLGİLER -->
+<section class="section" id="pratik">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <p class="sec-eyebrow">Güncel Veriler · Resmi Tebliğ Kaynaklı</p>
+        <h2>2026 Yılı Güncel Pratik Bilgiler</h2>
+      </div>
+      <span class="sec-date" id="today-date"></span>
+    </div>
+    <div class="cards-grid" id="cards-grid"></div>
+  </div>
+</section>
+
+<!-- RESMİ GAZETE -->
+<section class="rg-section" id="rgazete">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <p class="sec-eyebrow">Canlı RSS · resmigazete.gov.tr</p>
+        <h2>Resmi Gazete Başlıkları</h2>
+      </div>
+      <span class="rg-live-badge" id="rg-live-badge">
+        <span class="live-dot" style="background:var(--green)"></span> Canlı Veri
+      </span>
+    </div>
+    <div class="rg-search-row">
+      <input type="text" id="rg-search" placeholder="Başlıklarda ara... (ör: KDV, SGK, yönetmelik, kanun)" />
+      <button onclick="doSearch()">Ara</button>
+    </div>
+    <div class="rg-filters" id="rg-filters"></div>
+    <div class="rg-list" id="rg-list">
+      <div class="rg-loading"><span class="rg-spinner"></span> Resmi Gazete yükleniyor...</div>
+    </div>
+    <div class="rg-link-row">
+      <a href="https://www.resmigazete.gov.tr" target="_blank" class="btn-outline">Resmi Gazete →</a>
+      <a href="https://www.resmigazete.gov.tr/rss" target="_blank" class="btn-outline">RSS Kaynağı →</a>
+    </div>
+  </div>
+</section>
+
+<!-- İLETİŞİM -->
+<section class="contact-section" id="iletisim">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-col">
+        <h3>İletişim Bilgileri</h3>
+        <p>📍 Fevzi Çakmak Mh. 10753 Sok. No:3<br>Karatay / KONYA</p>
+        <p style="margin-top:10px">📞 0 (505) 310 91 28</p>
+        <p style="margin-top:6px">✉️ hasan@safakcilar.com</p>
+        <a href="https://wa.me/905053109128" target="_blank" class="contact-cta">📱 WhatsApp'tan Yazın</a>
+      </div>
+      <div class="contact-col">
+        <h3>Çalışma Saatleri</h3>
+        <div class="hours-row"><span class="day">Pazartesi – Cuma</span><span>09:00 – 18:00</span></div>
+        <div class="hours-row"><span class="day">Cumartesi</span><span>10:00 – 14:00</span></div>
+        <div class="hours-row"><span class="day">Pazar</span><span>Kapalı</span></div>
+      </div>
+      <div class="contact-col">
+        <h3>Hizmetlerimiz</h3>
+        <p style="display:block;color:rgba(255,255,255,0.55);line-height:2.2;">
+          Muhasebe &amp; Defter Tutma<br>
+          Vergi Beyannameleri<br>
+          SGK &amp; Bordro İşlemleri<br>
+          Şirket Kuruluşu &amp; Tasfiye<br>
+          Mali Danışmanlık<br>
+          Resmi Gazete Mevzuat Takibi
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer-bar">
+  <p>© 2026 Hasan Şafakçılar | SMMM — Tüm Hakları Saklıdır. | Konya Mali Müşavirlik</p>
+</div>
+
+<script>
+/* ── Tarih ── */
+const dateEl = document.getElementById('today-date');
+if (dateEl) dateEl.textContent = new Date().toLocaleDateString('tr-TR', { year:'numeric', month:'long', day:'numeric' }) + ' itibarıyla';
+
+/* ══════════════════════════════════════════════════════
+   PRATİK BİLGİLER
+   Tüm veriler resmi kaynaklardan doğrulanmıştır:
+   • Asgari Ücret  : ÇSGB Tebliği, RG 26.12.2025
+   • SGK Tavan     : 7566 sayılı Kanun, RG 19.12.2025 — tavan 9 kat
+   • GV Dilimleri  : GVK 332 No'lu Tebliğ, RG 31.12.2025
+   • Kıdem Tavanı  : H&MB Genelgesi 06.01.2026
+   • VUK Cezaları  : VUK 588 No'lu Tebliğ, RG 31.12.2025
+══════════════════════════════════════════════════════ */
+const cardsData = [
+  {
+    icon: '💰', title: 'Asgari Ücret 2026',
+    rows: [
+      { l: 'Brüt Asgari Ücret',             v: '33.030,00 ₺' },
+      { l: 'Net Asgari Ücret',              v: '28.075,50 ₺' },
+      { l: 'SGK İşçi Primi (%14)',          v: '4.624,20 ₺' },
+      { l: 'İşsizlik Sig. İşçi Payı (%1)', v: '330,30 ₺' },
+      { l: 'İşverene Maliyet (2 pt ind.)',  v: '40.214,03 ₺', cls: 'gold' },
+    ]
+  },
+  {
+    icon: '🏥', title: 'SGK Prim Tavan & Taban 2026',
+    rows: [
+      { l: 'Günlük Taban (Brüt Asg. Üc. / 30)', v: '1.101,00 ₺' },
+      { l: 'Aylık Taban (= Brüt Asg. Ücret)',   v: '33.030,00 ₺' },
+      { l: 'Aylık Tavan (Taban × 9)',            v: '297.270,00 ₺' },
+      { l: 'İşçi Toplam (SGK %14 + İşsiz. %1)', v: '%15' },
+      { l: 'İşveren Toplam (SGK %20,75 + %2)',  v: '%22,75', cls: 'gold' },
+    ]
+  },
+  {
+    icon: '📊', title: 'KDV Oranları 2026',
+    rows: [
+      { l: 'Genel Oran',              v: '%20' },
+      { l: 'Temel Gıda Maddeleri',    v: '%1' },
+      { l: 'İndirimli (Diğer Gıda)', v: '%10' },
+      { l: 'Konut (net 150 m² altı)', v: '%1' },
+      { l: 'Konut (net 150 m² üstü)', v: '%20' },
+    ]
+  },
+  {
+    icon: '📋', title: 'GV Dilimleri 2026 — Ücretliler',
+    rows: [
+      { l: '190.000 ₺ ye kadar',       v: '%15' },
+      { l: '190.001 – 400.000 ₺',      v: '%20' },
+      { l: '400.001 – 1.500.000 ₺',    v: '%27' },
+      { l: '1.500.001 – 5.300.000 ₺',  v: '%35' },
+      { l: '5.300.001 ₺ ve üzeri',      v: '%40', cls: 'gold' },
+    ]
+  },
+  {
+    icon: '🏢', title: 'Kurumlar Vergisi 2026',
+    rows: [
+      { l: 'Genel Oran',                     v: '%25' },
+      { l: 'Bankalar / Finansal Kuruluşlar', v: '%30' },
+      { l: 'İhracat Kazancı (5 pt ind.)',    v: '%20' },
+      { l: 'Geçici Vergi Oranı',             v: '%25' },
+      { l: 'Dar Mükellef Temettü Stopajı',   v: '%15', cls: 'gold' },
+    ]
+  },
+  {
+    icon: '📅', title: 'Beyanname Son Günleri',
+    rows: [
+      { l: 'Kurumlar Vergisi (2025 dön.)', v: '30 Nisan 2026',  cls: 'green' },
+      { l: 'Yıllık Gelir Vergisi (2025)',  v: '31 Mart 2026',   cls: 'green' },
+      { l: 'KDV Beyannamesi (aylık)',      v: 'Ertesi ay 28.' },
+      { l: 'Muhtasar Beyanname (aylık)',   v: 'Ertesi ay 26.' },
+      { l: 'Geçici Vergi — 1. Dönem',     v: '14 Mayıs 2026' },
+    ]
+  },
+  {
+    icon: '💳', title: 'Kıdem Tazminatı 2026',
+    rows: [
+      { l: 'Tavan (01.01 – 30.06.2026)', v: '64.948,77 ₺' },
+      { l: 'Taban (= Brüt Asg. Ücret)', v: '33.030,00 ₺' },
+      { l: 'Hesap Esası',               v: 'Her yıl için 30 gün brüt' },
+      { l: 'Vergi Kesintisi',           v: 'Yalnızca %0,759 damga' },
+      { l: 'SGK & Gelir Vergisi',       v: 'Muaf', cls: 'green' },
+    ]
+  },
+  {
+    icon: '🏦', title: 'Faiz & Reeskont Oranları',
+    rows: [
+      { l: 'TCMB Politika Faizi',    v: '%42,50' },
+      { l: 'Reeskont Oranı',         v: '%44,00' },
+      { l: 'Avans Faiz Oranı',       v: '%44,75' },
+      { l: 'Gecikme Zammı (aylık)',  v: '%5,00' },
+      { l: 'Pişmanlık Zammı (ayl.)', v: '%5,00', cls: 'gold' },
+    ]
+  },
+  {
+    icon: '🔢', title: 'VUK Cezaları 2026 (Sermaye Şirketi)',
+    rows: [
+      { l: '1. Derece Usulsüzlük',          v: '35.000 ₺' },
+      { l: '2. Derece Usulsüzlük',          v: '17.000 ₺' },
+      { l: 'Fatura Düzenlememe (ilk tsp.)', v: '17.000 ₺ min.' },
+      { l: 'Elektronik Beyan Vermeme',      v: '35.000 ₺' },
+      { l: 'Uzlaşma Alt Sınırı',            v: '40.000 ₺', cls: 'gold' },
+    ]
+  },
+];
+
+document.getElementById('cards-grid').innerHTML = cardsData.map(c => `
+  <div class="info-card">
+    <div class="card-head">
+      <div class="card-icon">${c.icon}</div>
+      <span class="card-title">${c.title}</span>
+    </div>
+    <div>
+      ${c.rows.map(r => `
+        <div class="data-row">
+          <span class="data-label">${r.l}</span>
+          <span class="data-val ${r.cls || ''}">${r.v}</span>
+        </div>`).join('')}
+    </div>
+  </div>`).join('');
+
+/* ══════════════════════════════════════════════════════
+   RESMİ GAZETE RSS
+   Önce kendi sunucumuzdaki rss-proxy.php'yi dener.
+   PHP çalışmazsa yedek olarak allorigins.win'i dener.
+══════════════════════════════════════════════════════ */
+let allItems = [];
+let baseItems = [];
+
+function tipBul(title) {
+  const t = title.toLowerCase();
+  if (t.includes('yönetmelik'))                                          return { k: 'yonetmelik', l: 'Yönetmelik' };
+  if (t.includes('tebliğ') || t.includes('teblig'))                     return { k: 'teblig',     l: 'Tebliğ' };
+  if (t.includes('cumhurbaşkanlığı kararnamesi') || t.includes('c.b.k')) return { k: 'cbk',       l: 'C.B.K.' };
+  if (t.includes('kanun'))                                               return { k: 'kanun',      l: 'Kanun' };
+  if (t.includes('genelge'))                                             return { k: 'genbel',     l: 'Genelge' };
+  if (t.includes('karar'))                                               return { k: 'karar',      l: 'Karar' };
+  if (t.includes('ilan') || t.includes('ihale'))                         return { k: 'ilan',       l: 'İlan' };
+  return { k: 'diger', l: 'Diğer' };
+}
+
+function trDate(str) {
+  if (!str) return '';
+  try { return new Date(str).toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric' }); }
+  catch (e) { return ''; }
+}
+
+function parseRSS(xmlStr) {
+  const doc = new DOMParser().parseFromString(xmlStr, 'application/xml');
+  const nodes = Array.from(doc.querySelectorAll('item'));
+  if (!nodes.length) throw new Error('Öğe bulunamadı');
+  return nodes.map(n => ({
+    title: n.querySelector('title')?.textContent?.trim() || '',
+    link:  n.querySelector('link')?.textContent?.trim()  || 'https://www.resmigazete.gov.tr',
+    date:  trDate(n.querySelector('pubDate')?.textContent),
+    tip:   tipBul(n.querySelector('title')?.textContent || ''),
+  }));
+}
+
+async function loadRSS() {
+  let xmlStr = null;
+
+  /* 1. Kendi sunucudaki PHP proxy'yi dene */
+  try {
+    const r = await fetch('rss-proxy.php', { cache: 'no-store' });
+    if (r.ok) {
+      const j = await r.json();
+      if (j.contents) xmlStr = j.contents;
+    }
+  } catch (e) { /* PHP yoksa sessizce geç */ }
+
+  /* 2. PHP çalışmadıysa yedek: allorigins.win */
+  if (!xmlStr) {
+    try {
+      const r = await fetch(
+        'https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.resmigazete.gov.tr/rss'),
+        { cache: 'no-store' }
+      );
+      if (r.ok) {
+        const j = await r.json();
+        if (j.contents) xmlStr = j.contents;
+      }
+    } catch (e) { /* yedek de başarısız */ }
+  }
+
+  if (!xmlStr) {
+    showError();
+    return;
+  }
+
+  try {
+    allItems  = parseRSS(xmlStr);
+    baseItems = allItems;
+
+    /* Ticker bandını doldur */
+    const half = allItems.slice(0, 14).map(i =>
+      `<span class="t-item"><b>${i.date || 'RG'}</b> ${i.title}</span>`
+    ).join('');
+    document.getElementById('ticker-track').innerHTML = half + half;
+
+    /* Canlı rozeti göster */
+    document.getElementById('rg-live-badge').style.display = 'inline-flex';
+
+    buildDateFilters();
+    renderItems(allItems);
+
+  } catch (e) {
+    showError();
+  }
+}
+
+function showError() {
+  document.getElementById('rg-list').innerHTML =
+    `<div class="rg-empty">⚠️ Resmi Gazete RSS şu an alınamadı. &nbsp;
+     <a href="https://www.resmigazete.gov.tr" target="_blank">resmigazete.gov.tr →</a></div>`;
+  const t = '<span class="t-item">Resmi Gazete RSS bağlantısı kurulamadı — resmigazete.gov.tr adresini ziyaret edin</span>';
+  document.getElementById('ticker-track').innerHTML = t + t;
+}
+
+function renderItems(items) {
+  const el = document.getElementById('rg-list');
+  if (!items.length) { el.innerHTML = '<div class="rg-empty">Sonuç bulunamadı.</div>'; return; }
+  el.innerHTML = items.slice(0, 50).map(i => `
+    <a class="rg-item" href="${i.link}" target="_blank" rel="noopener">
+      <span class="rg-badge b-${i.tip.k}">${i.tip.l}</span>
+      <div class="rg-text">
+        <h4>${i.title}</h4>
+        <div class="rg-meta">${i.date ? `<span>📅 ${i.date}</span>` : ''}</div>
+      </div>
+    </a>`).join('');
+}
+
+function buildDateFilters() {
+  const seen = new Set();
+  const dates = [];
+  allItems.forEach(i => { if (i.date && !seen.has(i.date)) { seen.add(i.date); dates.push(i.date); } });
+  const wrap = document.getElementById('rg-filters');
+  wrap.innerHTML =
+    `<button class="rg-date-btn active" onclick="filterDate(null,this)">Tümü (${allItems.length})</button>` +
+    dates.slice(0, 6).map(d => {
+      const c = allItems.filter(i => i.date === d).length;
+      return `<button class="rg-date-btn" onclick="filterDate('${d}',this)">${d} <span style="opacity:.6">(${c})</span></button>`;
+    }).join('');
+}
+
+function filterDate(date, btn) {
+  document.querySelectorAll('.rg-date-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  baseItems = date ? allItems.filter(i => i.date === date) : allItems;
+  const q = document.getElementById('rg-search').value.toLowerCase().trim();
+  renderItems(q ? baseItems.filter(i => i.title.toLowerCase().includes(q)) : baseItems);
+}
+
+function doSearch() {
+  const q = document.getElementById('rg-search').value.toLowerCase().trim();
+  renderItems(q ? baseItems.filter(i => i.title.toLowerCase().includes(q)) : baseItems);
+}
+
+document.getElementById('rg-search').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+loadRSS();
+</script>
+</body>
+</html>
