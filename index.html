@@ -82,15 +82,32 @@ nav { background: var(--navy); position: sticky; top: 0; z-index: 200; border-bo
 
 /* ── RESMİ GAZETE ── */
 .rg-section { background: var(--cream2); padding: 52px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.rg-filters { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
-.rg-date-btn { padding: 6px 14px; font-size: 12px; border: 1px solid var(--border); border-radius: 3px; background: transparent; color: var(--muted); cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
-.rg-date-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+.rg-controls-wrap { margin-bottom: 20px; }
+.rg-filter-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+.rg-scope-group { display: inline-flex; background: rgba(13,33,55,0.06); padding: 3px; border-radius: 6px; border: 1px solid var(--border); }
+.rg-scope-btn { padding: 7px 16px; font-size: 12.5px; font-weight: 500; border: none; border-radius: 4px; background: transparent; color: var(--navy); cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif; display: inline-flex; align-items: center; gap: 6px; }
+.rg-scope-btn.active { background: var(--navy); color: var(--gold2); box-shadow: 0 1px 4px rgba(13,33,55,0.15); font-weight: 600; }
+.rg-scope-btn:hover:not(.active) { color: var(--gold); }
+.rg-preset-group { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.rg-date-btn { padding: 6px 14px; font-size: 12px; border: 1px solid var(--border); border-radius: 4px; background: var(--white); color: var(--muted); cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+.rg-date-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); font-weight: 600; }
 .rg-date-btn:hover:not(.active) { border-color: var(--gold); color: var(--gold); }
-.rg-search-row { display: flex; gap: 8px; margin-bottom: 16px; }
+.rg-custom-box { display: none; background: var(--white); padding: 14px 18px; border-radius: 6px; border: 1px solid var(--border); margin-bottom: 14px; }
+.rg-custom-box.open { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.rg-date-inputs { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; font-size: 12.5px; color: var(--navy); }
+.rg-date-inputs label { display: flex; align-items: center; gap: 6px; font-weight: 500; }
+.rg-date-inputs input[type="date"] { padding: 6px 10px; border: 1px solid var(--border); border-radius: 4px; font-size: 12.5px; font-family: 'DM Sans', sans-serif; outline: none; background: var(--cream); color: var(--text); }
+.rg-date-inputs input[type="date"]:focus { border-color: var(--gold); }
+.rg-apply-btn { padding: 7px 18px; background: var(--navy); color: var(--white); border: none; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+.rg-apply-btn:hover { background: var(--gold); color: var(--navy); }
+.rg-status-bar { display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: var(--muted); margin-bottom: 12px; padding: 0 2px; flex-wrap: wrap; gap: 8px; }
+.rg-status-text b { color: var(--navy); font-weight: 600; }
+.rg-search-row { display: flex; gap: 8px; margin-bottom: 14px; }
 .rg-search-row input { flex: 1; padding: 9px 14px; font-size: 13px; border: 1px solid var(--border); border-radius: 4px; background: var(--white); color: var(--text); font-family: 'DM Sans', sans-serif; outline: none; }
 .rg-search-row input:focus { border-color: var(--gold); }
 .rg-search-row button { padding: 9px 20px; background: var(--navy); color: var(--white); border: none; border-radius: 4px; font-size: 12.5px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.15s; }
 .rg-search-row button:hover { background: var(--navy2); }
+.rg-filters { display: flex; gap: 6px; flex-wrap: wrap; }
 .rg-list { display: flex; flex-direction: column; gap: 4px; }
 .rg-item { background: var(--white); border-radius: 5px; padding: 14px 18px; display: flex; gap: 14px; align-items: flex-start; cursor: pointer; transition: all 0.15s; border: 1px solid transparent; text-decoration: none; color: inherit; }
 .rg-item:hover { border-color: var(--border); box-shadow: 0 2px 8px rgba(13,33,55,0.05); }
@@ -135,6 +152,12 @@ nav { background: var(--navy); position: sticky; top: 0; z-index: 200; border-bo
   .cards-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 26px; }
   .nav-links { display: none; }
+  .rg-filter-bar { flex-direction: column; align-items: stretch; }
+  .rg-scope-group { width: 100%; display: flex; }
+  .rg-scope-btn { flex: 1; justify-content: center; text-align: center; font-size: 11.5px; padding: 7px 8px; }
+  .rg-preset-group { justify-content: flex-start; }
+  .rg-date-inputs { flex-direction: column; align-items: stretch; }
+  .rg-apply-btn { width: 100%; }
 }
 </style>
 </head>
@@ -209,18 +232,57 @@ nav { background: var(--navy); position: sticky; top: 0; z-index: 200; border-bo
   <div class="container">
     <div class="sec-head">
       <div>
-        <p class="sec-eyebrow">Canlı RSS · resmigazete.gov.tr</p>
+        <p class="sec-eyebrow">Canlı Veri · resmigazete.gov.tr</p>
         <h2>Resmi Gazete Başlıkları</h2>
       </div>
       <span class="rg-live-badge" id="rg-live-badge">
-        <span class="live-dot" style="background:var(--green)"></span> Canlı Veri
+        <span class="live-dot" style="background:var(--green)"></span> Güncel Senkronlu
       </span>
     </div>
-    <div class="rg-search-row">
-      <input type="text" id="rg-search" placeholder="Başlıklarda ara... (ör: KDV, SGK, yönetmelik, kanun)" />
-      <button onclick="doSearch()">Ara</button>
+
+    <div class="rg-controls-wrap">
+      <!-- 1. Üst Filtre Barı: Kapsam & Tarih Seçenekleri -->
+      <div class="rg-filter-bar">
+        <div class="rg-scope-group" role="group" aria-label="Mevzuat Kapsamı">
+          <button id="scope-mali" class="rg-scope-btn active" onclick="setScope('mali')" title="Üniversite ve idari ilanları filtreleyip yalnızca vergi, SGK ve mali mevzuatı gösterir">
+            💼 Vergi &amp; Mali Mevzuat
+          </button>
+          <button id="scope-all" class="rg-scope-btn" onclick="setScope('all')" title="Tüm Resmi Gazete ilan ve başlıklarını listeler">
+            🌐 Tüm Başlıklar
+          </button>
+        </div>
+
+        <div class="rg-preset-group" role="group" aria-label="Tarih Seçimi">
+          <button id="preset-today" class="rg-date-btn active" onclick="setPreset('today')">Bugün</button>
+          <button id="preset-7days" class="rg-date-btn" onclick="setPreset('7days')">Son 7 Gün</button>
+          <button id="preset-14days" class="rg-date-btn" onclick="setPreset('14days')">Son 14 Gün</button>
+          <button id="preset-custom-btn" class="rg-date-btn" onclick="toggleCustomRange()">📅 Tarih Aralığı</button>
+        </div>
+      </div>
+
+      <!-- 2. Özel Tarih Aralığı Seçici (Açılır / Kapanır) -->
+      <div class="rg-custom-box" id="rg-custom-box">
+        <div class="rg-date-inputs">
+          <label>Başlangıç: <input type="date" id="rg-date-start" /></label>
+          <label>Bitiş: <input type="date" id="rg-date-end" /></label>
+          <button class="rg-apply-btn" onclick="applyCustomRange()">Filtrele</button>
+        </div>
+        <small style="color:var(--muted); font-size:11.5px;">Son 14 gün içerisindeki istediğiniz tarih aralığını belirleyebilirsiniz.</small>
+      </div>
+
+      <!-- 3. Arama Çubuğu -->
+      <div class="rg-search-row">
+        <input type="text" id="rg-search" placeholder="Başlıklarda ara... (ör: KDV, SGK, tebliğ, vergi, döviz, faiz)" />
+        <button onclick="doSearch()">Ara</button>
+      </div>
+
+      <!-- 4. Durum Bilgisi & Günlük Hızlı Butonlar -->
+      <div class="rg-status-bar">
+        <span id="rg-status-text" class="rg-status-text">Yükleniyor...</span>
+        <div class="rg-filters" id="rg-filters"></div>
+      </div>
     </div>
-    <div class="rg-filters" id="rg-filters"></div>
+
     <div class="rg-list" id="rg-list">
       <div class="rg-loading"><span class="rg-spinner"></span> Resmi Gazete yükleniyor...</div>
     </div>
@@ -395,7 +457,10 @@ document.getElementById('cards-grid').innerHTML = cardsData.map(c => `
    PHP çalışmazsa yedek olarak allorigins.win'i dener.
 ══════════════════════════════════════════════════════ */
 let allItems = [];
-let baseItems = [];
+let activeScope = 'mali';      // 'mali' | 'all'
+let activePreset = 'today';     // 'today' | '7days' | '14days' | 'custom' | specific 'DD.MM.YYYY'
+let customStartDate = null;
+let customEndDate = null;
 
 function normalizeTr(s) {
   return (s || '').toLowerCase()
@@ -404,6 +469,51 @@ function normalizeTr(s) {
     .replace(/â/g, 'a')
     .replace(/î/g, 'i')
     .replace(/û/g, 'u');
+}
+
+function parseItemDate(dateStr) {
+  if (!dateStr) return new Date(0);
+  const p = dateStr.split('.');
+  if (p.length !== 3) return new Date(0);
+  return new Date(parseInt(p[2], 10), parseInt(p[1], 10) - 1, parseInt(p[0], 10));
+}
+
+function isMaliMevzuat(item) {
+  const t = normalizeTr(item.title);
+
+  // 1. Kesinlikle elenecekler (üniversite öğrenci/akademik ilanları, rutin ihaleler, yargı ilanları)
+  const excludePatterns = [
+    'universite', 'rektorluk', 'fakulte', 'enstitu', 'yuksekokul',
+    'ogretim uyesi', 'ogretim elemani', 'arastirma gorevlisi', 'ogretim gorevlisi',
+    'lisansustu', 'on lisans ve lisans', 'egitim-ogretim', 'ogrenci isleri',
+    'artirma, eksiltme', 'ihale ilani', 'ihale ilanı', 'yargi ilanlari', 'cesitli ilanlar',
+    'kamulastirma', 'kamulaştırma', 'kayip ilan', 'tescil ilani'
+  ];
+  for (const ex of excludePatterns) {
+    if (t.includes(ex)) return false;
+  }
+
+  // 2. Vergi, maliye, muhasebe, SGK, ekonomi ve finans anahtar kelimeleri
+  const maliKeywords = [
+    'vergi', 'kdv', 'sgk', 'gelir', 'kurumlar', 'muhasebe', 'maliye', 'hazine', 'teblig',
+    'harc', 'damga', 'ticaret', 'gumruk', 'ihracat', 'ithalat', 'banka', 'bddk', 'spk',
+    'tcmb', 'faiz', 'butce', 'finans', 'enflasyon', 'kamu mali', 'kidem', 'asgari ucret',
+    'istisna', 'muafiyet', 'amortisman', 'fatura', 'defter', 'beyanname', 'cek', 'kambiyo',
+    'sermaye', 'sirket', 'konkordato', 'tesvik', 'tarife', 'turmob', 'kgk', 'vuk',
+    'sosyal guvenlik', 'emekli', 'sigorta', 'is kanunu', 'para', 'doviz', 'fiyat', 'piyasa',
+    'rekabet', 'ekonomi', 'sanayi ve teknoloji', 'borclanma', 'hazine ve maliye', 'odeme',
+    'tasfiye', 'alacak', 'tahsilat', 'efatura', 'e-fatura', 'e-defter', 'mali musavir'
+  ];
+  for (const kw of maliKeywords) {
+    if (t.includes(kw)) return true;
+  }
+
+  // 3. Kanun, CBK, Genelge ve Tebliğler (üniversite vs değilse) mevzuat değeri taşır
+  if (item.tip && ['kanun', 'cbk', 'teblig', 'genbel'].includes(item.tip.k)) {
+    return true;
+  }
+
+  return false;
 }
 
 function tipBul(title) {
@@ -436,10 +546,234 @@ function parseRSS(xmlStr) {
   }));
 }
 
+function getTodayString() {
+  const todayStr = new Date().toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  if (allItems.some(i => i.date === todayStr)) {
+    return todayStr;
+  }
+  return allItems[0]?.date || todayStr;
+}
+
+function setScope(scope) {
+  activeScope = scope;
+  const maliBtn = document.getElementById('scope-mali');
+  const allBtn = document.getElementById('scope-all');
+  if (maliBtn) maliBtn.classList.toggle('active', scope === 'mali');
+  if (allBtn) allBtn.classList.toggle('active', scope === 'all');
+  applyFilters();
+}
+
+function setPreset(preset) {
+  activePreset = preset;
+
+  ['today', '7days', '14days'].forEach(p => {
+    const btn = document.getElementById('preset-' + p);
+    if (btn) btn.classList.toggle('active', preset === p);
+  });
+
+  const customBtn = document.getElementById('preset-custom-btn');
+  if (customBtn) customBtn.classList.toggle('active', preset === 'custom');
+
+  document.querySelectorAll('.rg-filters .rg-date-btn').forEach(b => b.classList.remove('active'));
+
+  if (preset !== 'custom') {
+    const box = document.getElementById('rg-custom-box');
+    if (box) box.classList.remove('open');
+  }
+
+  applyFilters();
+}
+
+function selectDay(dateStr, btn) {
+  activePreset = dateStr;
+
+  ['today', '7days', '14days'].forEach(p => {
+    const b = document.getElementById('preset-' + p);
+    if (b) b.classList.remove('active');
+  });
+
+  const customBtn = document.getElementById('preset-custom-btn');
+  if (customBtn) customBtn.classList.remove('active');
+
+  document.querySelectorAll('.rg-filters .rg-date-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+
+  const box = document.getElementById('rg-custom-box');
+  if (box) box.classList.remove('open');
+
+  applyFilters();
+}
+
+function toggleCustomRange() {
+  const box = document.getElementById('rg-custom-box');
+  if (!box) return;
+  const isOpen = box.classList.toggle('open');
+  if (isOpen && allItems.length) {
+    const startInput = document.getElementById('rg-date-start');
+    const endInput = document.getElementById('rg-date-end');
+    const dates = allItems.map(i => parseItemDate(i.date)).sort((a,b) => a - b);
+    const toISO = d => {
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+    };
+    const minStr = toISO(dates[0]);
+    const maxStr = toISO(dates[dates.length - 1]);
+    if (startInput) {
+      if (!startInput.value) startInput.value = minStr;
+      startInput.min = minStr;
+      startInput.max = maxStr;
+    }
+    if (endInput) {
+      if (!endInput.value) endInput.value = maxStr;
+      endInput.min = minStr;
+      endInput.max = maxStr;
+    }
+  }
+}
+
+function applyCustomRange() {
+  const sVal = document.getElementById('rg-date-start')?.value;
+  const eVal = document.getElementById('rg-date-end')?.value;
+  if (!sVal || !eVal) return;
+
+  customStartDate = new Date(sVal + 'T00:00:00');
+  customEndDate = new Date(eVal + 'T23:59:59');
+
+  setPreset('custom');
+}
+
+function applyFilters() {
+  if (!allItems.length) return;
+
+  const query = (document.getElementById('rg-search')?.value || '').toLowerCase().trim();
+  const targetToday = getTodayString();
+  const now = new Date();
+
+  // 1. Tarihe göre süzme
+  let dateFiltered = allItems.filter(item => {
+    const itemDate = parseItemDate(item.date);
+    if (activePreset === 'today') {
+      return item.date === targetToday;
+    } else if (activePreset === '7days') {
+      const diffDays = (now - itemDate) / (1000 * 60 * 60 * 24);
+      return diffDays <= 7.5;
+    } else if (activePreset === '14days') {
+      return true;
+    } else if (activePreset === 'custom') {
+      if (customStartDate && itemDate < customStartDate) return false;
+      if (customEndDate && itemDate > customEndDate) return false;
+      return true;
+    } else {
+      return item.date === activePreset;
+    }
+  });
+
+  const totalInDate = dateFiltered.length;
+
+  // 2. Kapsama göre süzme (Mali Mevzuat vs Tümü)
+  let scopeFiltered = dateFiltered.filter(item => {
+    if (activeScope === 'mali') {
+      return isMaliMevzuat(item);
+    }
+    return true;
+  });
+
+  // 3. Arama metnine göre süzme
+  let finalItems = scopeFiltered.filter(item => {
+    if (query) {
+      return item.title.toLowerCase().includes(query);
+    }
+    return true;
+  });
+
+  updateStatusText(finalItems.length, totalInDate);
+  renderItems(finalItems);
+}
+
+function updateStatusText(count, totalInDate) {
+  const statusEl = document.getElementById('rg-status-text');
+  if (!statusEl) return;
+
+  const targetToday = getTodayString();
+  let dateLabel = `Bugün (${targetToday})`;
+  if (activePreset === '7days') dateLabel = 'Son 7 Gün';
+  else if (activePreset === '14days') dateLabel = 'Son 14 Gün';
+  else if (activePreset === 'custom') {
+    const s = document.getElementById('rg-date-start')?.value || '';
+    const e = document.getElementById('rg-date-end')?.value || '';
+    dateLabel = `${s} – ${e}`;
+  } else if (activePreset !== 'today') {
+    dateLabel = activePreset;
+  }
+
+  const scopeLabel = activeScope === 'mali' ? 'Vergi & Mali Mevzuat' : 'Tüm Başlıklar';
+  const hiddenCount = totalInDate - count;
+
+  if (count === 0 && activeScope === 'mali') {
+    statusEl.innerHTML = `<span><b>${dateLabel}</b> için mali mevzuat başlığı bulunamadı. (${totalInDate} diğer ilan/yönetmelik filtrelendi)</span>`;
+  } else {
+    let extra = '';
+    if (activeScope === 'mali' && hiddenCount > 0) {
+      extra = ` <span style="opacity:0.7">(${hiddenCount} genel/akademik ilan gizlendi)</span>`;
+    }
+    statusEl.innerHTML = `<span><b>${dateLabel}</b> · ${scopeLabel}: <b>${count}</b> başlık${extra}</span>`;
+  }
+}
+
+function renderItems(items) {
+  const el = document.getElementById('rg-list');
+  if (!items.length) {
+    if (activeScope === 'mali') {
+      el.innerHTML = `
+        <div class="rg-empty">
+          <p>⚠️ Seçilen tarih aralığında doğrudan vergi veya mali mevzuat başlığı bulunmamaktadır.</p>
+          <p style="margin-top:6px; font-size:12.5px; color:var(--muted)">Üniversite, akademik ve diğer genel ilanları incelemek için:</p>
+          <button onclick="setScope('all')" class="rg-date-btn active" style="margin-top:12px; display:inline-flex; align-items:center; gap:6px;">
+            🌐 Tüm Başlıkları Göster
+          </button>
+        </div>`;
+    } else {
+      el.innerHTML = '<div class="rg-empty">Seçilen kriterlere uygun başlık bulunamadı.</div>';
+    }
+    return;
+  }
+
+  el.innerHTML = items.slice(0, 100).map(i => `
+    <a class="rg-item" href="${i.link}" target="_blank" rel="noopener">
+      <span class="rg-badge b-${i.tip.k}">${i.tip.l}</span>
+      <div class="rg-text">
+        <h4>${i.title}</h4>
+        <div class="rg-meta">
+          ${i.date ? `<span>📅 ${i.date}</span>` : ''}
+          ${isMaliMevzuat(i) ? `<span style="color:var(--green); font-weight:600">✓ Mali Mevzuat</span>` : ''}
+        </div>
+      </div>
+    </a>`).join('');
+}
+
+function buildDatePills() {
+  const wrap = document.getElementById('rg-filters');
+  if (!wrap) return;
+
+  const seen = new Set();
+  const dates = [];
+  allItems.forEach(i => { if (i.date && !seen.has(i.date)) { seen.add(i.date); dates.push(i.date); } });
+
+  wrap.innerHTML = dates.slice(0, 5).map(d => {
+    return `<button class="rg-date-btn" onclick="selectDay('${d}', this)">${d}</button>`;
+  }).join('');
+}
+
+function doSearch() {
+  applyFilters();
+}
+
 async function loadRSS() {
   let items = null;
 
-  /* 1. Otomatik senkronlanan yerel resmigazete.json dosyasını yükle */
+  /* 1. Yerel otomatik güncellenen resmigazete.json */
   try {
     const r = await fetch('resmigazete.json?v=' + Date.now());
     if (r.ok) {
@@ -448,9 +782,9 @@ async function loadRSS() {
         items = data;
       }
     }
-  } catch (e) { /* yerel dosya yoksa veya hata verirse yedeklere geç */ }
+  } catch (e) { }
 
-  /* 2. PHP proxy dene */
+  /* 2. Yedek: PHP proxy */
   if (!items) {
     try {
       const r = await fetch('rss-proxy.php', { cache: 'no-store' });
@@ -481,11 +815,12 @@ async function loadRSS() {
   }
 
   try {
-    allItems  = items;
-    baseItems = allItems;
+    allItems = items;
 
-    /* Ticker bandını doldur */
-    const half = allItems.slice(0, 14).map(i =>
+    /* Ticker bandını mali başlıklara öncelik vererek doldur */
+    const tickerItems = allItems.filter(isMaliMevzuat);
+    const displayTicker = tickerItems.length ? tickerItems : allItems;
+    const half = displayTicker.slice(0, 14).map(i =>
       `<span class="t-item"><b>${i.date || 'RG'}</b> ${i.title}</span>`
     ).join('');
     document.getElementById('ticker-track').innerHTML = half + half;
@@ -494,8 +829,8 @@ async function loadRSS() {
     const badge = document.getElementById('rg-live-badge');
     if (badge) badge.style.display = 'inline-flex';
 
-    buildDateFilters();
-    renderItems(allItems);
+    buildDatePills();
+    applyFilters();
 
   } catch (e) {
     showError();
@@ -504,52 +839,17 @@ async function loadRSS() {
 
 function showError() {
   document.getElementById('rg-list').innerHTML =
-    `<div class="rg-empty">⚠️ Resmi Gazete RSS şu an alınamadı. &nbsp;
+    `<div class="rg-empty">⚠️ Resmi Gazete başlıkları şu an alınamadı. &nbsp;
      <a href="https://www.resmigazete.gov.tr" target="_blank">resmigazete.gov.tr →</a></div>`;
-  const t = '<span class="t-item">Resmi Gazete RSS bağlantısı kurulamadı — resmigazete.gov.tr adresini ziyaret edin</span>';
+  const t = '<span class="t-item">Resmi Gazete bağlantısı kurulamadı — resmigazete.gov.tr adresini ziyaret edin</span>';
   document.getElementById('ticker-track').innerHTML = t + t;
 }
 
-function renderItems(items) {
-  const el = document.getElementById('rg-list');
-  if (!items.length) { el.innerHTML = '<div class="rg-empty">Sonuç bulunamadı.</div>'; return; }
-  el.innerHTML = items.slice(0, 50).map(i => `
-    <a class="rg-item" href="${i.link}" target="_blank" rel="noopener">
-      <span class="rg-badge b-${i.tip.k}">${i.tip.l}</span>
-      <div class="rg-text">
-        <h4>${i.title}</h4>
-        <div class="rg-meta">${i.date ? `<span>📅 ${i.date}</span>` : ''}</div>
-      </div>
-    </a>`).join('');
+const searchInput = document.getElementById('rg-search');
+if (searchInput) {
+  searchInput.addEventListener('input', () => applyFilters());
+  searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') applyFilters(); });
 }
-
-function buildDateFilters() {
-  const seen = new Set();
-  const dates = [];
-  allItems.forEach(i => { if (i.date && !seen.has(i.date)) { seen.add(i.date); dates.push(i.date); } });
-  const wrap = document.getElementById('rg-filters');
-  wrap.innerHTML =
-    `<button class="rg-date-btn active" onclick="filterDate(null,this)">Tümü (${allItems.length})</button>` +
-    dates.slice(0, 6).map(d => {
-      const c = allItems.filter(i => i.date === d).length;
-      return `<button class="rg-date-btn" onclick="filterDate('${d}',this)">${d} <span style="opacity:.6">(${c})</span></button>`;
-    }).join('');
-}
-
-function filterDate(date, btn) {
-  document.querySelectorAll('.rg-date-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  baseItems = date ? allItems.filter(i => i.date === date) : allItems;
-  const q = document.getElementById('rg-search').value.toLowerCase().trim();
-  renderItems(q ? baseItems.filter(i => i.title.toLowerCase().includes(q)) : baseItems);
-}
-
-function doSearch() {
-  const q = document.getElementById('rg-search').value.toLowerCase().trim();
-  renderItems(q ? baseItems.filter(i => i.title.toLowerCase().includes(q)) : baseItems);
-}
-
-document.getElementById('rg-search').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
 loadRSS();
 </script>
 </body>
