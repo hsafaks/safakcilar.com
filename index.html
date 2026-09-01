@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SMMM Hasan ŞAFAKÇILAR | 2026 Güncel Pratik Bilgiler</title>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Hasan ŞAFAKÇILAR | SMMM &amp; Bağımsız Denetçi | 2026 Güncel Pratik Bilgiler</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -20,11 +22,11 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 /* ── NAV ── */
 nav { background: var(--navy); position: sticky; top: 0; z-index: 200; border-bottom: 2px solid var(--gold); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 13px 28px; max-width: 1100px; margin: 0 auto; }
-.logo-area { display: flex; align-items: center; gap: 14px; }
-.mm-logo-svg { flex-shrink: 0; width: 52px; height: 52px; }
+.logo-area { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.mm-logo-svg { flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; }
 .logo-text { display: flex; flex-direction: column; }
 .logo-name { font-family: 'Libre Baskerville', serif; font-size: 16px; font-weight: 700; color: var(--white); letter-spacing: 0.5px; line-height: 1.2; }
-.logo-sub { font-size: 10.5px; color: var(--gold2); letter-spacing: 1.8px; text-transform: uppercase; font-weight: 300; margin-top: 2px; }
+.logo-sub { font-size: 11px; color: var(--gold2); letter-spacing: 1.2px; text-transform: uppercase; font-weight: 500; margin-top: 3px; }
 .nav-links { display: flex; list-style: none; gap: 2px; align-items: center; }
 .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13px; padding: 7px 15px; border-radius: 3px; transition: all 0.18s; }
 .nav-links a:hover { color: var(--gold2); background: rgba(184,149,42,0.1); }
@@ -48,31 +50,78 @@ nav { background: var(--navy); position: sticky; top: 0; z-index: 200; border-bo
 .hero { background: var(--navy); padding: 58px 28px 52px; position: relative; overflow: hidden; }
 .hero::before { content:''; position:absolute; right:5%; top:50%; transform:translateY(-50%); width:340px; height:340px; border:1px solid rgba(184,149,42,0.07); border-radius:50%; pointer-events:none; }
 .hero::after  { content:''; position:absolute; right:10%; top:50%; transform:translateY(-50%); width:200px; height:200px; border:1px solid rgba(184,149,42,0.05); border-radius:50%; pointer-events:none; }
-.hero-content { max-width: 600px; position: relative; z-index: 1; }
-.hero-eyebrow { font-size: 10.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold2); font-weight: 500; margin-bottom: 16px; }
+.hero-content { max-width: 680px; position: relative; z-index: 1; }
+.hero-eyebrow { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold2); font-weight: 600; margin-bottom: 16px; }
 .hero h1 { font-family: 'Libre Baskerville', serif; font-size: 34px; font-weight: 700; color: var(--white); line-height: 1.28; margin-bottom: 14px; }
 .hero h1 em { color: var(--gold2); font-style: normal; }
-.hero-sub { font-size: 15px; color: rgba(255,255,255,0.6); font-weight: 300; margin-bottom: 32px; max-width: 500px; }
-.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-sub { font-size: 15px; color: rgba(255,255,255,0.65); font-weight: 300; margin-bottom: 26px; max-width: 580px; line-height: 1.65; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
 .btn-cream { background: var(--cream); color: var(--navy); border: none; padding: 11px 24px; font-size: 13px; font-weight: 600; border-radius: 4px; cursor: pointer; text-decoration: none; transition: all 0.18s; display: inline-flex; align-items: center; gap: 7px; font-family: 'DM Sans', sans-serif; }
 .btn-cream:hover { background: var(--white); }
 .btn-wa { background: var(--green); color: var(--white); border: none; padding: 11px 24px; font-size: 13px; font-weight: 500; border-radius: 4px; cursor: pointer; text-decoration: none; transition: all 0.18s; display: inline-flex; align-items: center; gap: 7px; font-family: 'DM Sans', sans-serif; }
 .btn-wa:hover { background: var(--green2); }
+.hero-trust-bar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.trust-tag { font-size: 11.5px; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.06); border: 1px solid rgba(184,149,42,0.28); padding: 5px 12px; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; }
 
-/* ── SECTION ── */
+/* ── HİZMETLER / UZMANLIK ALANLARI (ORTA BÖLÜM) ── */
+.services-section { background: var(--cream); padding: 54px 0 44px; border-bottom: 1px solid var(--border); }
+.trust-pill { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: var(--navy); background: rgba(184,149,42,0.14); border: 1px solid rgba(184,149,42,0.3); padding: 6px 14px; border-radius: 20px; }
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 24px; }
+.service-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 22px 18px; display: flex; flex-direction: column; transition: all 0.2s ease; position: relative; }
+.service-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(13,33,55,0.08); border-color: var(--gold); }
+.service-card.featured { border: 1.5px solid var(--gold); background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%); }
+.service-badge { position: absolute; top: -10px; right: 14px; background: var(--gold); color: var(--navy); font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; padding: 2px 8px; border-radius: 10px; }
+.service-icon { font-size: 26px; margin-bottom: 10px; }
+.service-card h3 { font-family: 'Libre Baskerville', serif; font-size: 15px; color: var(--navy); margin-bottom: 8px; line-height: 1.35; font-weight: 700; }
+.service-card p { font-size: 12.5px; color: var(--muted); line-height: 1.55; margin-bottom: 14px; flex: 1; }
+.service-list { list-style: none; padding: 0; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 10px; margin: 0; }
+.service-list li { font-size: 11.8px; color: var(--text); margin-bottom: 5px; font-weight: 500; display: flex; align-items: center; gap: 6px; }
+
+/* ── PRATİK BİLGİLER BÖLÜMÜ ── */
 .section { padding: 52px 0; }
-.sec-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
-.sec-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 6px; }
+.sec-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+.sec-eyebrow { font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 6px; }
 .sec-head h2 { font-family: 'Libre Baskerville', serif; font-size: 22px; font-weight: 700; color: var(--navy); }
 .sec-date { font-size: 12px; color: var(--muted); }
 
-/* ── KARTLAR ── */
+/* ── KARTLAR & MODAL ── */
 .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.info-card { background: var(--white); border: 1px solid rgba(184,149,42,0.12); border-radius: 8px; overflow: hidden; transition: box-shadow 0.18s; }
-.info-card:hover { box-shadow: 0 4px 20px rgba(13,33,55,0.08); }
+.info-card { background: var(--white); border: 1px solid rgba(184,149,42,0.14); border-radius: 8px; overflow: hidden; transition: all 0.2s ease; cursor: pointer; display: flex; flex-direction: column; }
+.info-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(13,33,55,0.12); border-color: var(--gold); }
 .card-head { background: var(--navy); padding: 14px 18px; display: flex; align-items: center; gap: 10px; }
 .card-icon { width: 32px; height: 32px; background: rgba(184,149,42,0.15); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
 .card-title { font-size: 13px; font-weight: 600; color: var(--white); letter-spacing: 0.3px; }
+.card-action-hint { padding: 8px 18px; background: rgba(13,33,55,0.03); border-top: 1px solid rgba(0,0,0,0.04); display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: auto; }
+.card-action-hint span { display: inline-flex; align-items: center; gap: 4px; }
+.info-card:hover .card-action-hint { background: rgba(184,149,42,0.08); color: var(--navy); }
+
+/* ── PRATİK BİLGİ DETAY MODAL ── */
+.info-modal-backdrop { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13,33,55,0.7); backdrop-filter: blur(4px); z-index: 999; align-items: center; justify-content: center; padding: 20px; }
+.info-modal-backdrop.active { display: flex; animation: modalFadeIn 0.2s ease; }
+@keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+.info-modal-card { background: var(--white); width: 100%; max-width: 620px; max-height: 88vh; overflow-y: auto; border-radius: 8px; box-shadow: 0 10px 35px rgba(13,33,55,0.25); border: 1px solid var(--border); position: relative; display: flex; flex-direction: column; animation: modalSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes modalSlideUp { from { transform: translateY(16px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.info-modal-close { position: absolute; top: 16px; right: 16px; background: rgba(13,33,55,0.06); border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 20px; color: var(--navy); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+.info-modal-close:hover { background: var(--navy); color: var(--white); }
+.info-modal-header { padding: 22px 26px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 14px; background: var(--cream); }
+.info-modal-icon { font-size: 28px; width: 48px; height: 48px; background: var(--white); border-radius: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,0.06); border: 1px solid var(--border); flex-shrink: 0; }
+.info-modal-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 600; display: block; margin-bottom: 2px; }
+.info-modal-title { font-family: 'Libre Baskerville', serif; font-size: 18px; color: var(--navy); }
+.info-modal-body { padding: 20px 26px; font-size: 13.5px; line-height: 1.65; color: var(--text); }
+.info-modal-law { background: rgba(184,149,42,0.08); border-left: 3px solid var(--gold); padding: 12px 14px; border-radius: 0 4px 4px 0; margin-bottom: 16px; display: flex; flex-direction: column; gap: 4px; }
+.law-link-btn { align-self: flex-start; font-size: 11.5px; font-weight: 600; color: var(--navy); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; background: var(--white); border-radius: 4px; border: 1px solid rgba(13,33,55,0.15); transition: all 0.15s; margin-top: 4px; }
+.law-link-btn:hover { background: var(--navy); color: var(--gold2); }
+.info-modal-table { border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-bottom: 18px; background: var(--white); }
+.modal-table-row { display: flex; justify-content: space-between; padding: 8px 14px; border-bottom: 1px solid rgba(0,0,0,0.04); font-size: 13px; }
+.modal-table-row:nth-child(even) { background: rgba(246,243,236,0.5); }
+.modal-table-row:last-child { border-bottom: none; }
+.modal-row-label { color: var(--muted); }
+.modal-row-val { font-weight: 600; color: var(--navy); text-align: right; }
+.info-modal-notes { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 14px 16px; }
+.info-modal-notes h4 { font-size: 13px; color: var(--navy); margin-bottom: 6px; font-weight: 700; }
+.info-modal-notes p { font-size: 12.8px; color: #475569; margin-bottom: 8px; line-height: 1.6; }
+.info-modal-footer { padding: 14px 26px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 12px; background: var(--cream); flex-wrap: wrap; }
+
 .data-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 18px; border-bottom: 1px solid rgba(0,0,0,0.04); gap: 8px; }
 .data-row:last-child { border-bottom: none; }
 .data-label { font-size: 12.5px; color: var(--muted); font-weight: 400; flex: 1; line-height: 1.35; }
@@ -167,18 +216,19 @@ nav { background: var(--navy); position: sticky; top: 0; z-index: 200; border-bo
 <nav>
   <div class="nav-inner">
     <div class="logo-area">
-      <svg class="mm-logo-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-        <rect width="60" height="60" rx="2" fill="#1B3A6B"/>
-        <rect x="4" y="4" width="52" height="52" rx="1" fill="none" stroke="white" stroke-width="2"/>
-        <text x="7" y="47" font-family="'Times New Roman', Georgia, serif" font-size="40" font-weight="700" fill="white">M</text>
-        <text x="37" y="24" font-family="'Times New Roman', Georgia, serif" font-size="18" font-weight="400" fill="white">m</text>
+      <svg class="mm-logo-svg" viewBox="0 0 100 100" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="3" fill="#11296B"/>
+        <rect x="7" y="7" width="86" height="86" rx="1.5" fill="none" stroke="#FFFFFF" stroke-width="3.2"/>
+        <text x="14" y="80" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif" font-size="68" font-weight="900" fill="#FFFFFF">M</text>
+        <text x="67" y="38" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif" font-size="27" font-weight="900" fill="#FFFFFF">m</text>
       </svg>
       <div class="logo-text">
         <span class="logo-name">HASAN ŞAFAKÇILAR</span>
-        <span class="logo-sub">Serbest Muhasebeci Mali Müşavir</span>
+        <span class="logo-sub">SMMM &amp; Bağımsız Denetçi</span>
       </div>
     </div>
     <ul class="nav-links">
+      <li><a href="#hizmetler">Uzmanlık Alanlarımız</a></li>
       <li><a href="#pratik">2026 Pratik Bilgiler</a></li>
       <li><a href="#rgazete">Resmi Gazete</a></li>
       <li><a href="#iletisim">İletişim</a></li>
@@ -203,12 +253,84 @@ nav { background: var(--navy); position: sticky; top: 0; z-index: 200; border-bo
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content container">
-    <p class="hero-eyebrow">Mali Müşavirlik · Konya · SMMM</p>
-    <h1>2026 Mali Mevzuat ve<br><em>Finansal Rehberlik</em></h1>
-    <p class="hero-sub">25 yılı aşkın tecrübemizle mali müşavirlik ve vergi danışmanlığı.</p>
+    <p class="hero-eyebrow">Konya · SMMM · Bağımsız Denetçi (KGK)</p>
+    <h1>2026 Mali Mevzuat, Denetim ve<br><em>Finansal Rehberlik</em></h1>
+    <p class="hero-sub">25 yılı aşkın tecrübemizle Serbest Muhasebeci Mali Müşavirlik, Bağımsız Denetim ve Stratejik Vergi Danışmanlığı ile işletmenizin finansal güvencesi.</p>
     <div class="hero-btns">
-      <a href="#pratik" class="btn-cream">📋 2026 Pratik Bilgiler</a>
+      <a href="#hizmetler" class="btn-cream">🔍 Uzmanlık Alanlarımız</a>
+      <a href="#pratik" class="btn-cream" style="background:transparent; color:var(--white); border:1px solid var(--border);">📋 2026 Pratik Bilgiler</a>
       <a href="https://wa.me/905053109128" target="_blank" class="btn-wa">📱 WhatsApp İletişim</a>
+    </div>
+    <div class="hero-trust-bar">
+      <span class="trust-tag">🛡️ KGK Onaylı Bağımsız Denetçi</span>
+      <span class="trust-tag">🏛️ TÜRMOB / Konya SMMMO</span>
+      <span class="trust-tag">📊 25+ Yıl Mesleki Deneyim</span>
+    </div>
+  </div>
+</section>
+
+<!-- HİZMETLER / UZMANLIK ALANLARI (ORTA BÖLÜM) -->
+<section class="services-section" id="hizmetler">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <p class="sec-eyebrow">Yetkinliklerimiz &amp; Denetim Standartları</p>
+        <h2>Mali Müşavirlik, Bağımsız Denetim ve Kurumsal Çözümler</h2>
+      </div>
+      <div class="trust-pill">
+        <span>🛡️ KGK Lisanslı Bağımsız Denetçi</span>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <!-- 1. Bağımsız Denetim -->
+      <div class="service-card featured">
+        <div class="service-badge">Öne Çıkan</div>
+        <div class="service-icon">🔍</div>
+        <h3>Bağımsız Denetim &amp; Güvence</h3>
+        <p>Kamu Gözetimi Kurumu (KGK) ve Türkiye Denetim Standartları (BDS) doğrultusunda finansal tabloların denetimi ve mevzuata uygunluk raporlaması.</p>
+        <ul class="service-list">
+          <li>✓ Yasal &amp; İhtiyari Bağımsız Denetim</li>
+          <li>✓ Özel Amaçlı Güvence Raporlaması</li>
+          <li>✓ İç Kontrol ve Mali Risk Analizi</li>
+        </ul>
+      </div>
+
+      <!-- 2. Stratejik Vergi Danışmanlığı -->
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Stratejik Vergi Danışmanlığı</h3>
+        <p>Vergi mevzuatındaki dinamik değişiklikleri işletmeniz lehine yöneterek yasal indirim, istisna ve teşviklerden maksimum düzeyde faydalanmanızı sağlıyoruz.</p>
+        <ul class="service-list">
+          <li>✓ Kurumlar &amp; Gelir Vergisi Planlaması</li>
+          <li>✓ Vergi İnceleme ve Uzlaşma Desteği</li>
+          <li>✓ KDV İadesi &amp; Mahsup Süreçleri</li>
+        </ul>
+      </div>
+
+      <!-- 3. Mali Müşavirlik & e-Dönüşüm -->
+      <div class="service-card">
+        <div class="service-icon">💼</div>
+        <h3>Mali Müşavirlik &amp; e-Dönüşüm</h3>
+        <p>Bilanço, gelir tablosu, beyanname hazırlığı ve e-Defter / e-Fatura entegrasyonlarını sıfır hata prensibiyle ve yasal sürelere tam uyumla yürütüyoruz.</p>
+        <ul class="service-list">
+          <li>✓ Genel Muhasebe &amp; Dönem Sonu Kapanışı</li>
+          <li>✓ e-Defter, e-Fatura, e-İrsaliye Takibi</li>
+          <li>✓ SGK Bildirgeleri &amp; Bordro Yönetimi</li>
+        </ul>
+      </div>
+
+      <!-- 4. Şirket Kuruluşu & Yapılanma -->
+      <div class="service-card">
+        <div class="service-icon">🏛️</div>
+        <h3>Şirket Kuruluş &amp; Yapılanma</h3>
+        <p>Yerli ve yabancı sermayeli şirket kuruluşları, ana sözleşme revizyonları, sermaye artırımı/azaltımı ve kurumsal tasfiye süreçlerinde uçtan uca destek.</p>
+        <ul class="service-list">
+          <li>✓ Ltd. ve A.Ş. Kuruluş &amp; Tescil</li>
+          <li>✓ Nevi Değişikliği ve Birleşmeler</li>
+          <li>✓ Mali Tablo ve Yönetim Raporlaması</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -313,12 +435,12 @@ nav { background: var(--navy); position: sticky; top: 0; z-index: 200; border-bo
       <div class="contact-col">
         <h3>Hizmetlerimiz</h3>
         <p style="display:block;color:rgba(255,255,255,0.55);line-height:2.2;">
+          Bağımsız Denetim &amp; KGK Güvencesi<br>
+          Stratejik Vergi Danışmanlığı<br>
           Muhasebe &amp; Defter Tutma<br>
-          Vergi Beyannameleri<br>
-          SGK &amp; Bordro İşlemleri<br>
+          Vergi Beyannameleri &amp; SGK Bordro<br>
           Şirket Kuruluşu &amp; Tasfiye<br>
-          Mali Danışmanlık<br>
-          Resmi Gazete Mevzuat Takibi
+          Resmi Gazete Mali Mevzuat Takibi
         </p>
       </div>
     </div>
@@ -326,7 +448,43 @@ nav { background: var(--navy); position: sticky; top: 0; z-index: 200; border-bo
 </section>
 
 <div class="footer-bar">
-  <p>© 2026 Hasan Şafakçılar | SMMM — Tüm Hakları Saklıdır. | Konya Mali Müşavirlik</p>
+  <p>© 2026 Hasan Şafakçılar | SMMM &amp; Bağımsız Denetçi — Tüm Hakları Saklıdır. | Konya Mali Müşavirlik &amp; Bağımsız Denetim</p>
+</div>
+
+<!-- PRATİK BİLGİ DETAY MODAL -->
+<div class="info-modal-backdrop" id="infoModal" onclick="closeInfoModal(event)">
+  <div class="info-modal-card" onclick="event.stopPropagation()">
+    <button class="info-modal-close" onclick="closeInfoModal()" aria-label="Kapat">&times;</button>
+    <div class="info-modal-header">
+      <div class="info-modal-icon" id="modalIcon">📋</div>
+      <div>
+        <span class="info-modal-eyebrow" id="modalEyebrow">2026 Mevzuat &amp; Uygulama Rehberi</span>
+        <h3 class="info-modal-title" id="modalTitle">Pratik Bilgi Detayı</h3>
+      </div>
+    </div>
+
+    <div class="info-modal-body">
+      <!-- Yasal Dayanak Kutusu -->
+      <div class="info-modal-law" id="modalLawBox">
+        <div><strong>⚖️ Yasal Dayanak:</strong> <span id="modalLawText"></span></div>
+        <a id="modalLawLink" href="#" target="_blank" rel="noopener" class="law-link-btn">🌐 İlgili Resmi Mevzuatı İncele ↗</a>
+      </div>
+
+      <!-- Tablo / Rakamlar -->
+      <div class="info-modal-table" id="modalTable"></div>
+
+      <!-- Uzman Notu / Açıklama -->
+      <div class="info-modal-notes">
+        <h4>📌 SMMM &amp; Bağımsız Denetçi Notu:</h4>
+        <div id="modalNotesText"></div>
+      </div>
+    </div>
+
+    <div class="info-modal-footer">
+      <a id="modalWaBtn" href="#" target="_blank" class="btn-wa">📱 Bu Konuda Uzman Danışmanlık Alın</a>
+      <button onclick="closeInfoModal()" class="btn-outline" style="padding:8px 18px; cursor:pointer;">Kapat</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -335,109 +493,178 @@ const dateEl = document.getElementById('today-date');
 if (dateEl) dateEl.textContent = new Date().toLocaleDateString('tr-TR', { year:'numeric', month:'long', day:'numeric' }) + ' itibarıyla';
 
 /* ══════════════════════════════════════════════════════
-   PRATİK BİLGİLER
-   Tüm veriler resmi kaynaklardan doğrulanmıştır:
-   • Asgari Ücret  : ÇSGB Tebliği, RG 26.12.2025
-   • SGK Tavan     : 7566 sayılı Kanun, RG 19.12.2025 — tavan 9 kat
-   • GV Dilimleri  : GVK 332 No'lu Tebliğ, RG 31.12.2025
-   • Kıdem Tavanı  : H&MB Genelgesi 01.07.2026
-   • VUK Cezaları  : VUK 588 No'lu Tebliğ, RG 31.12.2025
+   PRATİK BİLGİLER & İNTERAKTİF MEVZUAT DETAYLARI
+   Resmi Kanun, Tebliğ ve Genelgelerle Desteklenmiş Veri Tabanı
 ══════════════════════════════════════════════════════ */
 const cardsData = [
   {
-    icon: '💰', title: 'Asgari Ücret 2026',
+    id: 'asgari-ucret',
+    icon: '💰',
+    title: 'Asgari Ücret 2026',
+    law: 'Asgari Ücret Tespit Komisyonu Kararı (26.12.2025 Tarihli ve 33119 Sayılı Resmi Gazete)',
+    lawUrl: 'https://www.resmigazete.gov.tr',
     rows: [
       { l: 'Brüt Asgari Ücret',             v: '33.030,00 ₺' },
       { l: 'Net Asgari Ücret',              v: '28.075,50 ₺' },
       { l: 'SGK İşçi Primi (%14)',          v: '4.624,20 ₺' },
       { l: 'İşsizlik Sig. İşçi Payı (%1)', v: '330,30 ₺' },
       { l: 'İşverene Maliyet (2 pt ind.)',  v: '40.214,03 ₺', cls: 'gold' },
-    ]
+    ],
+    notes: `
+      <p><b>Vergi İstisnası:</b> Asgari ücrete kadar olan tüm ücret ödemeleri Gelir Vergisi ve Damga Vergisinden tamamen istisnadır.</p>
+      <p><b>İşveren Teşviki:</b> Primlerini düzenli ödeyen ve borcu bulunmayan işverenler için 2 puanlık SGK işveren hissesi prim indirimi uygulanmaktadır.</p>
+      <p><b>Yemek ve Yol İstisnaları:</b> 2026 yılı için fiilen çalışılan günlere ait günlük yemek bedeli istisnası 245,00 TL (+KDV), nakit ulaşım/yol ücreti istisnası ise 122,00 TL olarak uygulanmaktadır.</p>
+    `
   },
   {
-    icon: '🏥', title: 'SGK Prim Tavan & Taban 2026',
+    id: 'sgk-tavan-taban',
+    icon: '🏥',
+    title: 'SGK Prim Tavan & Taban 2026',
+    law: '5510 Sayılı Kanun Md. 82 & 7566 Sayılı Kanun Düzenlemesi (RG 19.12.2025)',
+    lawUrl: 'https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5510&MevzuatTur=1&MevzuatTertip=5',
     rows: [
       { l: 'Günlük Taban (Brüt Asg. Üc. / 30)', v: '1.101,00 ₺' },
       { l: 'Aylık Taban (= Brüt Asg. Ücret)',   v: '33.030,00 ₺' },
       { l: 'Aylık Tavan (Taban × 9)',            v: '297.270,00 ₺' },
       { l: 'İşçi Toplam (SGK %14 + İşsiz. %1)', v: '%15' },
       { l: 'İşveren Toplam (SGK %20,75 + %2)',  v: '%22,75', cls: 'gold' },
-    ]
+    ],
+    notes: `
+      <p><b>Tavan Katsayısı Değişikliği:</b> 7566 sayılı Kanun ile prime esas kazanç üst sınırı (tavan), brüt asgari ücretin 7,5 katından <b>9 katına</b> (297.270,00 TL) yükseltilmiştir.</p>
+      <p><b>Prime Tabi Kazançlar:</b> Ücret, ikramiye, prim ve devamlılık arz eden her türlü nakdi ödeme tavan tutara kadar prim matrahına dahil edilir. Tavanı aşan kazançlar için prim kesilmez.</p>
+    `
   },
   {
-    icon: '📊', title: 'KDV Oranları 2026',
+    id: 'kdv-oranlari',
+    icon: '📊',
+    title: 'KDV Oranları 2026',
+    law: '3065 Sayılı Katma Değer Vergisi Kanunu & 2007/13033 Sayılı BKK ile İlgili Cumhurbaşkanı Kararları',
+    lawUrl: 'https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=3065&MevzuatTur=1&MevzuatTertip=5',
     rows: [
       { l: 'Genel Oran',              v: '%20' },
       { l: 'Temel Gıda Maddeleri',    v: '%1' },
       { l: 'İndirimli (Diğer Gıda)', v: '%10' },
       { l: 'Konut (net 150 m² altı)', v: '%1' },
       { l: 'Konut (net 150 m² üstü)', v: '%20' },
-    ]
+    ],
+    notes: `
+      <p><b>Tevkifat Uygulamaları:</b> Belirlenmiş alıcılar ve hizmet sektörlerinde (temizlik, taşımacılık, fason tekstil, yapım işleri) kısmi KDV tevkifat oranlarına hassasiyetle uyulmalıdır.</p>
+      <p><b>KDV İadesi:</b> İndirimli orana (%1 ve %10) tabi teslimler ile ihracat gibi tam istisna kapsamındaki işlemlerden doğan KDV iade talepleri için alt sınır ve YMM/SMMM rapor sınırları dikkate alınmalıdır.</p>
+    `
   },
   {
-    icon: '📋', title: 'GV Dilimleri 2026 — Ücretliler',
+    id: 'gv-dilimleri',
+    icon: '📋',
+    title: 'GV Dilimleri 2026 — Ücretliler',
+    law: '193 Sayılı Gelir Vergisi Kanunu Md. 103 & Gelir Vergisi Genel Tebliği (Seri No: 332, RG 31.12.2025)',
+    lawUrl: 'https://www.gib.gov.tr',
     rows: [
       { l: '190.000 ₺ ye kadar',       v: '%15' },
       { l: '190.001 – 400.000 ₺',      v: '%20' },
       { l: '400.001 – 1.500.000 ₺',    v: '%27' },
       { l: '1.500.001 – 5.300.000 ₺',  v: '%35' },
       { l: '5.300.001 ₺ ve üzeri',      v: '%40', cls: 'gold' },
-    ]
+    ],
+    notes: `
+      <p><b>Kümülatif Vergi Matrahı:</b> Ücret bordrolarında çalışanların kümülatif vergi matrahı yıl içinde artarak üst dilimlere geçiş gösterir.</p>
+      <p><b>Asgari Ücret Mahsubu:</b> Asgari ücrete isabet eden vergi tutarı hesaplanan vergiden düşülerek çalışanın net eline geçen tutar asgari ücretin altına inmeyecek şekilde korunur.</p>
+    `
   },
   {
-    icon: '🏢', title: 'Kurumlar Vergisi 2026',
+    id: 'kurumlar-vergisi',
+    icon: '🏢',
+    title: 'Kurumlar Vergisi 2026',
+    law: '5520 Sayılı Kurumlar Vergisi Kanunu Md. 32 & 7456 Sayılı Kanun Düzenlemeleri',
+    lawUrl: 'https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5520&MevzuatTur=1&MevzuatTertip=5',
     rows: [
       { l: 'Genel Oran',                     v: '%25' },
       { l: 'Bankalar / Finansal Kuruluşlar', v: '%30' },
       { l: 'İhracat Kazancı (5 pt ind.)',    v: '%20' },
       { l: 'Geçici Vergi Oranı',             v: '%25' },
       { l: 'Dar Mükellef Temettü Stopajı',   v: '%15', cls: 'gold' },
-    ]
+    ],
+    notes: `
+      <p><b>İhracat ve Üretim Teşviki:</b> İhracat yapan kurumların münhasıran ihracattan elde ettikleri kazançlarına kurumlar vergisi oranı 5 puan indirimli olarak <b>%20</b> uygulanır.</p>
+      <p><b>Asgari Kurumlar Vergisi:</b> İndirim ve istisnalar düşülmeden önceki kurum kazancı üzerinden hesaplanan yerel asgari kurumlar vergisi düzenlemeleri göz önünde bulundurulmalıdır.</p>
+    `
   },
   {
-    icon: '📅', title: 'Beyanname Son Günleri',
+    id: 'beyanname-takvimi',
+    icon: '📅',
+    title: 'Beyanname Son Günleri',
+    law: '213 Sayılı Vergi Usul Kanunu & GİB Resmi Vergi Takvimi',
+    lawUrl: 'https://www.gib.gov.tr/yardim-ve-kaynaklar/vergi-takvimi',
     rows: [
       { l: 'Kurumlar Vergisi (2025 dön.)', v: '30 Nisan 2026',  cls: 'green' },
       { l: 'Yıllık Gelir Vergisi (2025)',  v: '31 Mart 2026',   cls: 'green' },
       { l: 'KDV Beyannamesi (aylık)',      v: 'Ertesi ay 28.' },
-      { l: 'Muhtasar Beyanname (aylık)',   v: 'Ertesi ay 26.' },
-      { l: 'Geçici Vergi — 1. Dönem',     v: '14 Mayıs 2026' },
-    ]
+      { l: 'Muhtasar & Prim Hizmet',       v: 'Ertesi ay 26.' },
+      { l: 'Geçici Vergi — 1. Dönem',     v: '17 Mayıs 2026' },
+    ],
+    notes: `
+      <p><b>Süre Uzatımları:</b> Son günü hafta sonuna veya resmi tatile rastlayan beyan ve ödeme süreleri, otomatik olarak takip eden ilk iş gününün sonuna uzar.</p>
+      <p><b>Elektronik Beyan Zorunluluğu:</b> Beyannamelerin tamamı GİB e-Beyanname sistemi üzerinden elektronik ortamda verilmelidir; süresinde verilmeyen beyanlar için özel usulsüzlük cezası ve re'sen takdir riski oluşur.</p>
+    `
   },
   {
-    icon: '💳', title: 'Kıdem Tazminatı 2026',
+    id: 'kidem-tazminati',
+    icon: '💳',
+    title: 'Kıdem Tazminatı 2026 (Güncel)',
+    law: 'Hazine ve Maliye Bakanlığı 01.07.2026 Tarihli Mali ve Sosyal Haklar Genelgesi & 1475 Sayılı İş Kanunu Md. 14',
+    lawUrl: 'https://www.hmb.gov.tr',
     rows: [
       { l: 'Tavan (01.07 – 31.12.2026)', v: '73.729,87 ₺' },
       { l: 'Taban (= Brüt Asg. Ücret)', v: '33.030,00 ₺' },
       { l: 'Hesap Esası',               v: 'Her yıl için 30 gün brüt' },
       { l: 'Vergi Kesintisi',           v: 'Yalnızca %0,759 damga' },
       { l: 'SGK & Gelir Vergisi',       v: 'Muaf', cls: 'green' },
-    ]
+    ],
+    notes: `
+      <p><b>Güncel 2. Dönem Tavanı:</b> 1 Temmuz 2026 – 31 Aralık 2026 tarihleri arasında memur maaş katsayısına bağlı kıdem tazminatı tavanı <b>73.729,87 TL</b> olarak yürürlüktedir.</p>
+      <p><b>Tavanı Aşan Kısım:</b> İşveren sözleşme veya inisiyatif ile tavanın üzerinde ödeme yaparsa, tavanı aşan tutar kıdem tazminatı sayılmayıp ücret niteliği kazanır; Gelir Vergisi ve SGK kesintisine tabi olur.</p>
+      <p><b>Giydirilmiş Ücret:</b> Hesaplamada yalnızca çıplak brüt ücret değil; süreklilik arz eden yol, yemek, ikramiye, prim ve yakacak gibi her türlü ayni ve nakdi haklar dahil edilir.</p>
+    `
   },
   {
-    icon: '🏦', title: 'Faiz & Reeskont Oranları',
+    id: 'faiz-reeskont',
+    icon: '🏦',
+    title: 'Faiz & Reeskont Oranları',
+    law: 'TCMB Reeskont ve Avans İşlemleri Tebliği & 6183 Sayılı AATUHK Md. 51',
+    lawUrl: 'https://www.tcmb.gov.tr',
     rows: [
       { l: 'TCMB Politika Faizi',    v: '%42,50' },
       { l: 'Reeskont Oranı',         v: '%44,00' },
       { l: 'Avans Faiz Oranı',       v: '%44,75' },
       { l: 'Gecikme Zammı (aylık)',  v: '%5,00' },
       { l: 'Pişmanlık Zammı (ayl.)', v: '%5,00', cls: 'gold' },
-    ]
+    ],
+    notes: `
+      <p><b>Reeskont Değerlemesi:</b> Vergi Usul Kanunu gereğince vadesi gelmemiş senede bağlı alacak ve borçlar değerleme gününün kıymetine irca edilerek dönem gideri/geliri yazılabilir.</p>
+      <p><b>Kamu Borçları Gecikme Zammı:</b> Vergi ve SGK prim borçlarında her ay için uygulanan gecikme zammı oranı %5'tir (günlük gecikmelerde oran ay kesri olarak hesaplanır).</p>
+    `
   },
   {
-    icon: '🔢', title: 'VUK Cezaları 2026 (Sermaye Şirketi)',
+    id: 'vuk-cezalari',
+    icon: '🔢',
+    title: 'VUK Cezaları 2026 (Sermaye Şirketi)',
+    law: '213 Sayılı Vergi Usul Kanunu Md. 352-353 & 588 Sıra No.lu VUK Genel Tebliği',
+    lawUrl: 'https://www.gib.gov.tr',
     rows: [
       { l: '1. Derece Usulsüzlük',          v: '35.000 ₺' },
       { l: '2. Derece Usulsüzlük',          v: '17.000 ₺' },
       { l: 'Fatura Düzenlememe (ilk tsp.)', v: '17.000 ₺ min.' },
       { l: 'Elektronik Beyan Vermeme',      v: '35.000 ₺' },
       { l: 'Uzlaşma Alt Sınırı',            v: '40.000 ₺', cls: 'gold' },
-    ]
-  },
+    ],
+    notes: `
+      <p><b>Özel Usulsüzlük Cezaları:</b> Fatura, sevk irsaliyesi ve serbest meslek makbuzu düzenlememe veya almama halinde her bir belge için asgari 17.000 TL ceza kesilir; bir takvim yılındaki toplam ceza tavanı 8,5 milyon TL'yi aşabilir.</p>
+      <p><b>Cezada İndirim (VUK 376):</b> Tebliğ tarihinden itibaren 30 gün içinde indirim talep edilirse usulsüzlük cezalarında %50 indirim imkanı mevcuttur.</p>
+    `
+  }
 ];
 
 document.getElementById('cards-grid').innerHTML = cardsData.map(c => `
-  <div class="info-card">
+  <div class="info-card" onclick="openInfoModal('${c.id}')" title="Detaylı bilgi ve yasal mevzuat için tıklayın">
     <div class="card-head">
       <div class="card-icon">${c.icon}</div>
       <span class="card-title">${c.title}</span>
@@ -449,7 +676,64 @@ document.getElementById('cards-grid').innerHTML = cardsData.map(c => `
           <span class="data-val ${r.cls || ''}">${r.v}</span>
         </div>`).join('')}
     </div>
+    <div class="card-action-hint">
+      <span>Detay &amp; Yasal Mevzuat</span>
+      <span>↗</span>
+    </div>
   </div>`).join('');
+
+function openInfoModal(cardId) {
+  const card = cardsData.find(c => c.id === cardId);
+  if (!card) return;
+
+  document.getElementById('modalIcon').textContent = card.icon;
+  document.getElementById('modalTitle').textContent = card.title;
+  document.getElementById('modalLawText').textContent = card.law || 'İlgili Kanun ve Tebliğler';
+
+  const lawLink = document.getElementById('modalLawLink');
+  if (card.lawUrl) {
+    lawLink.href = card.lawUrl;
+    lawLink.style.display = 'inline-flex';
+  } else {
+    lawLink.style.display = 'none';
+  }
+
+  document.getElementById('modalTable').innerHTML = card.rows.map(r => `
+    <div class="modal-table-row">
+      <span class="modal-row-label">${r.l}</span>
+      <span class="modal-row-val ${r.cls || ''}">${r.v}</span>
+    </div>
+  `).join('');
+
+  document.getElementById('modalNotesText').innerHTML = card.notes || '<p>Detaylı bilgi için bizimle iletişime geçebilirsiniz.</p>';
+
+  const waBtn = document.getElementById('modalWaBtn');
+  if (waBtn) {
+    const msg = encodeURIComponent(`Merhaba Hasan Bey, 2026 ${card.title} hakkında danışmanlık almak istiyorum.`);
+    waBtn.href = `https://wa.me/905053109128?text=${msg}`;
+  }
+
+  const modal = document.getElementById('infoModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeInfoModal(e) {
+  if (e && e.target && e.target.id !== 'infoModal' && !e.target.classList.contains('info-modal-close')) {
+    return;
+  }
+  const modal = document.getElementById('infoModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeInfoModal();
+});
 
 /* ══════════════════════════════════════════════════════
    RESMİ GAZETE RSS
