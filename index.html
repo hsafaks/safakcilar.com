@@ -226,7 +226,7 @@ nav { background: var(--navy); position: sticky; top: 0; z-index: 200; border-bo
     </div>
     <div class="rg-link-row">
       <a href="https://www.resmigazete.gov.tr" target="_blank" class="btn-outline">Resmi Gazete →</a>
-      <a href="https://www.resmigazete.gov.tr/rss" target="_blank" class="btn-outline">RSS Kaynağı →</a>
+      <a href="https://www.resmigazete.gov.tr/eskiler" target="_blank" class="btn-outline">Resmi Gazete Arşivi →</a>
     </div>
   </div>
 </section>
@@ -237,7 +237,7 @@ nav { background: var(--navy); position: sticky; top: 0; z-index: 200; border-bo
     <div class="contact-grid">
       <div class="contact-col">
         <h3>İletişim Bilgileri</h3>
-        <p>📍 Fevzi Çakmak Mh. 10753 Sok. No:3<br>Karatay / KONYA</p>
+        <p>📍 Fevzi Çakmak Mh. Medcezir Sok. No: 8/109<br>Karatay / KONYA</p>
         <p style="margin-top:10px">📞 0 (505) 310 91 28</p>
         <p style="margin-top:6px">✉️ hasan@safakcilar.com</p>
         <a href="https://wa.me/905053109128" target="_blank" class="contact-cta">📱 WhatsApp'tan Yazın</a>
@@ -278,7 +278,7 @@ if (dateEl) dateEl.textContent = new Date().toLocaleDateString('tr-TR', { year:'
    • Asgari Ücret  : ÇSGB Tebliği, RG 26.12.2025
    • SGK Tavan     : 7566 sayılı Kanun, RG 19.12.2025 — tavan 9 kat
    • GV Dilimleri  : GVK 332 No'lu Tebliğ, RG 31.12.2025
-   • Kıdem Tavanı  : H&MB Genelgesi 06.01.2026
+   • Kıdem Tavanı  : H&MB Genelgesi 01.07.2026
    • VUK Cezaları  : VUK 588 No'lu Tebliğ, RG 31.12.2025
 ══════════════════════════════════════════════════════ */
 const cardsData = [
@@ -345,7 +345,7 @@ const cardsData = [
   {
     icon: '💳', title: 'Kıdem Tazminatı 2026',
     rows: [
-      { l: 'Tavan (01.01 – 30.06.2026)', v: '64.948,77 ₺' },
+      { l: 'Tavan (01.07 – 31.12.2026)', v: '73.729,87 ₺' },
       { l: 'Taban (= Brüt Asg. Ücret)', v: '33.030,00 ₺' },
       { l: 'Hesap Esası',               v: 'Her yıl için 30 gün brüt' },
       { l: 'Vergi Kesintisi',           v: 'Yalnızca %0,759 damga' },
@@ -397,15 +397,24 @@ document.getElementById('cards-grid').innerHTML = cardsData.map(c => `
 let allItems = [];
 let baseItems = [];
 
+function normalizeTr(s) {
+  return (s || '').toLowerCase()
+    .replace(/İ/g, 'i')
+    .replace(/I/g, 'ı')
+    .replace(/â/g, 'a')
+    .replace(/î/g, 'i')
+    .replace(/û/g, 'u');
+}
+
 function tipBul(title) {
-  const t = title.toLowerCase();
-  if (t.includes('yönetmelik'))                                          return { k: 'yonetmelik', l: 'Yönetmelik' };
-  if (t.includes('tebliğ') || t.includes('teblig'))                     return { k: 'teblig',     l: 'Tebliğ' };
-  if (t.includes('cumhurbaşkanlığı kararnamesi') || t.includes('c.b.k')) return { k: 'cbk',       l: 'C.B.K.' };
-  if (t.includes('kanun'))                                               return { k: 'kanun',      l: 'Kanun' };
-  if (t.includes('genelge'))                                             return { k: 'genbel',     l: 'Genelge' };
-  if (t.includes('karar'))                                               return { k: 'karar',      l: 'Karar' };
-  if (t.includes('ilan') || t.includes('ihale'))                         return { k: 'ilan',       l: 'İlan' };
+  const t = normalizeTr(title);
+  if (t.includes('yonetmelik'))                                         return { k: 'yonetmelik', l: 'Yönetmelik' };
+  if (t.includes('teblig'))                                             return { k: 'teblig',     l: 'Tebliğ' };
+  if (t.includes('cumhurbaskanligi kararnamesi') || t.includes('c.b.k')) return { k: 'cbk',       l: 'C.B.K.' };
+  if (t.includes('kanun'))                                              return { k: 'kanun',      l: 'Kanun' };
+  if (t.includes('genelge'))                                            return { k: 'genbel',     l: 'Genelge' };
+  if (t.includes('karar'))                                              return { k: 'karar',      l: 'Karar' };
+  if (t.includes('ilan') || t.includes('ihale') || t.includes('yargi')) return { k: 'ilan',       l: 'İlan' };
   return { k: 'diger', l: 'Diğer' };
 }
 
@@ -428,19 +437,32 @@ function parseRSS(xmlStr) {
 }
 
 async function loadRSS() {
-  let xmlStr = null;
+  let items = null;
 
-  /* 1. Kendi sunucudaki PHP proxy'yi dene */
+  /* 1. Otomatik senkronlanan yerel resmigazete.json dosyasını yükle */
   try {
-    const r = await fetch('rss-proxy.php', { cache: 'no-store' });
+    const r = await fetch('resmigazete.json?v=' + Date.now());
     if (r.ok) {
-      const j = await r.json();
-      if (j.contents) xmlStr = j.contents;
+      const data = await r.json();
+      if (Array.isArray(data) && data.length > 0) {
+        items = data;
+      }
     }
-  } catch (e) { /* PHP yoksa sessizce geç */ }
+  } catch (e) { /* yerel dosya yoksa veya hata verirse yedeklere geç */ }
 
-  /* 2. PHP çalışmadıysa yedek: allorigins.win */
-  if (!xmlStr) {
+  /* 2. PHP proxy dene */
+  if (!items) {
+    try {
+      const r = await fetch('rss-proxy.php', { cache: 'no-store' });
+      if (r.ok) {
+        const j = await r.json();
+        if (j.contents) items = parseRSS(j.contents);
+      }
+    } catch (e) { }
+  }
+
+  /* 3. Yedek: allorigins */
+  if (!items) {
     try {
       const r = await fetch(
         'https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.resmigazete.gov.tr/rss'),
@@ -448,18 +470,18 @@ async function loadRSS() {
       );
       if (r.ok) {
         const j = await r.json();
-        if (j.contents) xmlStr = j.contents;
+        if (j.contents) items = parseRSS(j.contents);
       }
-    } catch (e) { /* yedek de başarısız */ }
+    } catch (e) { }
   }
 
-  if (!xmlStr) {
+  if (!items || !items.length) {
     showError();
     return;
   }
 
   try {
-    allItems  = parseRSS(xmlStr);
+    allItems  = items;
     baseItems = allItems;
 
     /* Ticker bandını doldur */
@@ -469,7 +491,8 @@ async function loadRSS() {
     document.getElementById('ticker-track').innerHTML = half + half;
 
     /* Canlı rozeti göster */
-    document.getElementById('rg-live-badge').style.display = 'inline-flex';
+    const badge = document.getElementById('rg-live-badge');
+    if (badge) badge.style.display = 'inline-flex';
 
     buildDateFilters();
     renderItems(allItems);

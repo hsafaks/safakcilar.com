@@ -1,0 +1,37 @@
+﻿name: Gunluk Resmi Gazete Guncelleme
+
+on:
+  schedule:
+    # Her gun saat 02:30 UTC ve 06:00 UTC (Turkiye saatiyle 05:30 ve 09:00)
+    - cron: '30 2,6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu Cek
+        uses: actions/checkout@v4
+
+      - name: Node.js Kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Resmi Gazete Verilerini Cek
+        run: node scripts/fetch-resmigazete.js
+
+      - name: Degisiklikleri Commit ve Push Yap
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add resmigazete.json
+          if git diff --staged --quiet; then
+            echo "Yeni veri yok, commit yapilmiyor."
+          else
+            git commit -m "chore: Resmi Gazete verileri guncellendi [skip ci]"
+            git push origin main
+          fi
