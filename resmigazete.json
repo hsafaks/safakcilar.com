@@ -1,5 +1,59 @@
 [
   {
+    "title": "2027-2029 Dönemi Kamu Yatırım Programı Hazırlıkları ile İlgili 2026/10 Sayılı Cumhurbaşkanlığı Genelgesi",
+    "link": "https://www.resmigazete.gov.tr/eskiler/2026/09/20260912-1.pdf",
+    "date": "12.09.2026",
+    "tip": {
+      "k": "genbel",
+      "l": "Genelge"
+    }
+  },
+  {
+    "title": "2027-2029 Dönemi Bütçe Çağrısı ve Eki Bütçe Hazırlama Rehberi",
+    "link": "https://www.resmigazete.gov.tr/eskiler/2026/09/20260912-2.pdf",
+    "date": "12.09.2026",
+    "tip": {
+      "k": "diger",
+      "l": "Diğer"
+    }
+  },
+  {
+    "title": "a - Yargı İlânları",
+    "link": "http://www.resmigazete.gov.tr/main.aspx?home=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/09/20260912.htm&main=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/09/20260912-2.htm",
+    "date": "12.09.2026",
+    "tip": {
+      "k": "diger",
+      "l": "Diğer"
+    }
+  },
+  {
+    "title": "b - Artırma, Eksiltme ve İhale İlânları",
+    "link": "http://www.resmigazete.gov.tr/main.aspx?home=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/09/20260912.htm&main=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/09/20260912-3.htm",
+    "date": "12.09.2026",
+    "tip": {
+      "k": "diger",
+      "l": "Diğer"
+    }
+  },
+  {
+    "title": "c - Çeşitli İlânlar",
+    "link": "http://www.resmigazete.gov.tr/main.aspx?home=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/09/20260912.htm&main=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/09/20260912-4.htm",
+    "date": "12.09.2026",
+    "tip": {
+      "k": "diger",
+      "l": "Diğer"
+    }
+  },
+  {
+    "title": "T.C. Merkez Bankasınca Belirlenen Döviz Kurları ve Devlet İç Borçlanma Senetlerinin Günlük Değerleri",
+    "link": "http://www.resmigazete.gov.tr/main.aspx?home=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/09/20260912.htm&main=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/09/20260912-5.htm",
+    "date": "12.09.2026",
+    "tip": {
+      "k": "diger",
+      "l": "Diğer"
+    }
+  },
+  {
     "title": "Birleşmiş Milletler Güvenlik Konseyinin 1267 (1999), 1988 (2011), 1989 (2011) ve 2253 (2015) Sayılı Kararlarıyla Listelenen Kişi, Kuruluş veya Organizasyonların Tasarrufunda Bulunan Malvarlığının Dondurulması Hakkındaki 30/9/2013 Tarihli ve 2013/5428 Sayılı Bakanlar Kurulu Kararının Eki (1) Sayılı Listede Değişiklik Yapılmasına İlişkin Karar (Karar Sayısı:&#8200;11785)",
     "link": "https://www.resmigazete.gov.tr/eskiler/2026/09/20260911-5.pdf",
     "date": "11.09.2026",
@@ -1227,123 +1281,6 @@
     "title": "Resmî Gazete yayımlanmamaktadır.",
     "link": "https://www.resmigazete.gov.tr/eskiler/2026/08/20110101-1.htm",
     "date": "30.08.2026",
-    "tip": {
-      "k": "diger",
-      "l": "Diğer"
-    }
-  },
-  {
-    "title": "Yeniköprü-Hakkari Devlet Yolu Projesi (Km:48+991.12-52+113.02 arası) ile Heyelan Servis Yoluna Rastlayan Kesimde Araziye Girilerek Yol Yapım Çalışmalarının Tamamlanması Amacıyla Bazı Taşınmazlar ile Üzerlerindeki Müştemilatın Karayolları Genel Müdürlüğü Tarafından Acele Kamulaştırılması Hakkında Karar (Karar Sayısı: 11678)",
-    "link": "https://www.resmigazete.gov.tr/eskiler/2026/08/20260829-1.pdf",
-    "date": "29.08.2026",
-    "tip": {
-      "k": "karar",
-      "l": "Karar"
-    }
-  },
-  {
-    "title": "Sınırları Gösterilen Alanın “Milli Savunma Üniversitesi Teknoloji Geliştirme Bölgesi” Olarak Tespit Edilmesi Hakkında Karar (Karar Sayısı: 11679)",
-    "link": "https://www.resmigazete.gov.tr/eskiler/2026/08/20260829-2.pdf",
-    "date": "29.08.2026",
-    "tip": {
-      "k": "karar",
-      "l": "Karar"
-    }
-  },
-  {
-    "title": "Sınırları Gösterilen Alanın İkinci Derece Kara Askeri Yasak Bölge İlan Edilmesi Hakkında Karar (Karar Sayısı: 11680)",
-    "link": "https://www.resmigazete.gov.tr/eskiler/2026/08/20260829-3.pdf",
-    "date": "29.08.2026",
-    "tip": {
-      "k": "karar",
-      "l": "Karar"
-    }
-  },
-  {
-    "title": "Özel Hastaneler Yönetmeliğinde Değişiklik Yapılmasına Dair Yönetmelik",
-    "link": "https://www.resmigazete.gov.tr/eskiler/2026/08/20260829-4.htm",
-    "date": "29.08.2026",
-    "tip": {
-      "k": "diger",
-      "l": "Diğer"
-    }
-  },
-  {
-    "title": "Doğal Afet Sigortaları Kurumu Çalışma Esasları Yönetmeliğinde Değişiklik Yapılmasına Dair Yönetmelik",
-    "link": "https://www.resmigazete.gov.tr/eskiler/2026/08/20260829-5.htm",
-    "date": "29.08.2026",
-    "tip": {
-      "k": "diger",
-      "l": "Diğer"
-    }
-  },
-  {
-    "title": "Sinop Üniversitesi Bilimsel ve Teknolojik Araştırmalar Uygulama ve Araştırma Merkezi Yönetmeliği",
-    "link": "https://www.resmigazete.gov.tr/eskiler/2026/08/20260829-6.htm",
-    "date": "29.08.2026",
-    "tip": {
-      "k": "diger",
-      "l": "Diğer"
-    }
-  },
-  {
-    "title": "Beşeri Tıbbi Ürünlerin Fiyatlandırılması Hakkında Tebliğ",
-    "link": "https://www.resmigazete.gov.tr/eskiler/2026/08/20260829-7.htm",
-    "date": "29.08.2026",
-    "tip": {
-      "k": "diger",
-      "l": "Diğer"
-    }
-  },
-  {
-    "title": "Sosyal Güvenlik Kurumu Sağlık Uygulama Tebliğinde Değişiklik Yapılmasına Dair Tebliğ",
-    "link": "https://www.resmigazete.gov.tr/eskiler/2026/08/20260829-8.pdf",
-    "date": "29.08.2026",
-    "tip": {
-      "k": "diger",
-      "l": "Diğer"
-    }
-  },
-  {
-    "title": "Sağlık Hizmetleri Fiyatlandırma Komisyonu Kararı",
-    "link": "https://www.resmigazete.gov.tr/eskiler/2026/08/20260829-9.pdf",
-    "date": "29.08.2026",
-    "tip": {
-      "k": "karar",
-      "l": "Karar"
-    }
-  },
-  {
-    "title": "Enerji Piyasası Düzenleme Kurulunun 27/08/2026 Tarihli ve 14830, 14831, 14832, 14833, 14834 ve 14835 Sayılı Kararları",
-    "link": "https://www.resmigazete.gov.tr/eskiler/2026/08/20260829-10.pdf",
-    "date": "29.08.2026",
-    "tip": {
-      "k": "karar",
-      "l": "Karar"
-    }
-  },
-  {
-    "title": "a - Artırma, Eksiltme ve İhale İlânları",
-    "link": "http://www.resmigazete.gov.tr/main.aspx?home=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/08/20260829.htm&main=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/08/20260829-3.htm",
-    "date": "29.08.2026",
-    "tip": {
-      "k": "diger",
-      "l": "Diğer"
-    }
-  },
-  {
-    "title": "b - Çeşitli İlânlar",
-    "link": "http://www.resmigazete.gov.tr/main.aspx?home=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/08/20260829.htm&main=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/08/20260829-4.htm",
-    "date": "29.08.2026",
-    "tip": {
-      "k": "diger",
-      "l": "Diğer"
-    }
-  },
-  {
-    "title": "T.C. Merkez Bankasınca Belirlenen Döviz Kurları ve Devlet İç Borçlanma Senetlerinin Günlük Değerleri",
-    "link": "http://www.resmigazete.gov.tr/main.aspx?home=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/08/20260829.htm&main=http://www.resmigazete.gov.tr/ilanlar/eskiilanlar/2026/08/20260829-5.htm",
-    "date": "29.08.2026",
     "tip": {
       "k": "diger",
       "l": "Diğer"
